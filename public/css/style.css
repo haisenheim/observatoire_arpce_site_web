@@ -14,34 +14,6 @@ legend{
     width: auto;
 }
 
-td>ul.list-inline{
-    margin-bottom: 0;
-}
-
 .pull-right{
     float: right;
 }
-
-.alert{
-        margin-bottom: 0;
-        padding: 0.5rem 1.75rem;
-}
-
-.nav-sidebar .nav-item > .nav-link {
-    width: 100%;
-}
-
-[class*="sidebar-dark-"] .nav-sidebar > .nav-item.menu-open > .nav-link, [class*="sidebar-dark-"] .nav-sidebar > .nav-item:hover > .nav-link {
-    background-color: transparent;
-  }
-
-@font-face {
-    font-family: 'lobster-regular';
-    src: url('./Lobster-Regular.ttf');
-}
-
-div.space-btw{
-    display: flex;
-    justify-content: space-between;
-}
-
