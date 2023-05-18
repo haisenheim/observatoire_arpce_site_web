@@ -25,7 +25,7 @@ Route::prefix('admin')
     ->middleware(['auth','admin'])
     ->name('admin.')
     ->group(function(){
-        Route::get('/dashboard','DashboardController');
+        Route::get('/dashboard','DashboardController@index');
         Route::resource('formations', 'FormationController');
         Route::resource('domaines', 'DomaineController');
         Route::resource('regions', 'RegionController');
