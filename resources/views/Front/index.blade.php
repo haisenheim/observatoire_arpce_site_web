@@ -66,7 +66,7 @@
 
           <li><a href="#">ACTUALITE</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a class="btn btn-sm btn-warning" href="/login">Connexion</a></li>
+          <li><a class="btn btn-sm btn-warning pl-1 ml-3" href="/login">Connexion</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
