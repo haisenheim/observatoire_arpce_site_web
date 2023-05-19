@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>KEKA - Index</title>
+  <title>KEKA A CAFE</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -51,9 +51,9 @@
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
-        <h1><a href="index.html">Eterna</a></h1>
+       <!-- <h1><a href="/">Eterna</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        <a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
