@@ -1,5 +1,5 @@
 
-@extends('layouts.admin')
+@extends('layouts/admin')
 
 @section('content-header')
 <div class="row mb-2">
