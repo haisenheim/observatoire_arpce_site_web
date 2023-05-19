@@ -21,7 +21,7 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
 Route::prefix('admin')
-    ->namespace('Admin')
+    ->namespace('App\Http\Controllers\Admin')
     ->middleware(['auth','admin'])
     ->name('admin.')
     ->group(function(){
