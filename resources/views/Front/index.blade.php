@@ -66,7 +66,7 @@
 
           <li><a href="#">ACTUALITE</a></li>
           <li><a href="#">Contact</a></li>
-          <li><a class="btn btn-sm btn-warning" style="margin-left: 10px; padding-left:5px" href="/login">Connexion</a></li>
+          <li><a class="btn btn-sm btn-warning" style="margin-left: 10px; padding:5px; background: #883D1A; color:azure" href="/login">Connexion</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
