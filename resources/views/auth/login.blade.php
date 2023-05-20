@@ -18,7 +18,7 @@
 <div class="login-box">
   <div class="login-logo">
     <a href="">
-        <img height="240" src="{{ asset('img/logo.png') }}" alt="">
+        <img height="160" src="{{ asset('img/logo.png') }}" alt="">
     </a>
   </div>
   <!-- /.login-logo -->
@@ -55,7 +55,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-12">
-            <button type="submit" style="background: #4D331F" class="btn btn-block">Se connecter</button>
+            <button type="submit" style="background: #4D331F; color: white" class="btn btn-block">Se connecter</button>
           </div>
           <!-- /.col -->
         </div>
