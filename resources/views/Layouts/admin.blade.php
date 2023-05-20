@@ -97,14 +97,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/zones" class="nav-link {{ $active==4?'active':'' }}">
-              <i class="nav-icon fas fa-map"></i>
-              <p>
-                Secteurs
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-search"></i>
               <p>
@@ -163,13 +155,6 @@
             </ul>
           </li>
           <li class="nav-header"></li>
-
-          <li class="nav-item">
-            <a style="font-style:italic" href="/factures" class="nav-link nav-light {{ $active==10?'active':'' }}">
-              <i class="nav-icon fas fa-ellipsis-h"></i>
-              <p>Factures</p>
-            </a>
-          </li>
           <li class="nav-item">
             <a style="font-style:italic" href="/admin/users" class="nav-link nav-light">
               <i class="nav-icon fas fa-ellipsis-h"></i>

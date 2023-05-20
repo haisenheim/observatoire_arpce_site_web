@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="{{asset('plugins/summernote/summernote-bs4.min.css')}}">
     <style>
         [class*="sidebar-dark-"]{
-            background-color: #4D331F;
+            background-color: #883D1A;
         }
     </style>
   </head>
