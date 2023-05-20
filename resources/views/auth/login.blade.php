@@ -26,7 +26,7 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Se connecter pour entrer dans votre espace</p>
 
-      <form action="/login" method="post">
+      <form action="{{ route('login') }}" method="post">
         @csrf
         <div class="input-group mb-3">
           <input type="email" class="form-control" placeholder="Email">
