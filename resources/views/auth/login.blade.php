@@ -24,7 +24,7 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Se connecter pour entrer dans votre espace</p>
+      <p class="login-box-msg" style="color:#883D1A">Se connecter pour entrer dans votre espace</p>
 
       <form action="{{ route('login') }}" method="post">
         @csrf
@@ -55,7 +55,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-12">
-            <button type="submit" style="background: #4D331F; color: white" class="btn btn-block">Se connecter</button>
+            <button type="submit" style="background: #883D1A; color: white" class="btn btn-block">Se connecter</button>
           </div>
           <!-- /.col -->
         </div>
