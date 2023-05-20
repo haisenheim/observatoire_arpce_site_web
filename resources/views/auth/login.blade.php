@@ -18,7 +18,7 @@
 <div class="login-box">
   <div class="login-logo">
     <a href="">
-        <img src="{{ asset('img/logo.png') }}" alt="">
+        <img height="240" src="{{ asset('img/logo.png') }}" alt="">
     </a>
   </div>
   <!-- /.login-logo -->
@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-8">
+          <div class="col-md-12">
             <div class="icheck-primary">
               <input type="checkbox" id="remember">
               <label for="remember">
@@ -54,7 +54,7 @@
             </div>
           </div>
           <!-- /.col -->
-          <div class="col-4">
+          <div class="col-md-12">
             <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
           </div>
           <!-- /.col -->
