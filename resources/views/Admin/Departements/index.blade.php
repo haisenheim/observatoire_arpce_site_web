@@ -1,5 +1,5 @@
 
-@extends('layouts.admin')
+@extends('Layouts.admin')
 
 @section('content-header')
 <div class="row mb-2">
@@ -48,6 +48,6 @@
         </div>
   </div>
 
-  
+
 
 @endsection
