@@ -4,12 +4,12 @@
 @section('content-header')
 <div class="row mb-2">
     <div class="col-sm-6">
-      <h1 class="m-0">FORMATIONS</h1>
+      <h1 class="m-0">ACTIVITES</h1>
     </div><!-- /.col -->
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-        <li class="breadcrumb-item active">Formations</li>
+        <li class="breadcrumb-item active">Activites</li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -28,11 +28,11 @@
                             </tr>
                     </thead>
                     <tbody>
-                        @foreach ($formations as $p)
+                        @foreach ($activites as $p)
                             <tr>
                                 <td> {{ $p->name }}</td>
                                 <td>{{ App\Helpers\NumberFr::format($p->exploitants->count()) }}</td>
-                                <th></th>
+                                <td></td>
 
                             </tr>
                         @endforeach
