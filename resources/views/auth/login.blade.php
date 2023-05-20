@@ -55,7 +55,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-12">
-            <button type="submit" class="btn btn-primary btn-block">Se connecter</button>
+            <button type="submit" style="background: #4D331F" class="btn btn-block">Se connecter</button>
           </div>
           <!-- /.col -->
         </div>
