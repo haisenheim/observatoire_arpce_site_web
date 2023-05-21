@@ -18,11 +18,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'v1','namespace'=>'Api'], function () {
+Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api'], function () {
     Route::post('/login', 'UserController@login');
-    Route::post('/register', 'UserController@register');
-	Route::post('/client/create','ClientController@store');//->middleware('auth:api');
-	Route::get('/clients','ClientController@index');//->middleware('auth:api');
+    Route::get('/get-params','HomeController@getParams');
     Route::post('/sync','ExploitantController@sync');
 });
 

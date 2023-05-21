@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Client;
 use App\Models\Cooperative;
 use App\Models\Gic;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
@@ -22,7 +21,6 @@ class UserController extends Controller
 	public function login() {
 		// get email and password from request
 		$credentials = request(['phone', 'password']);
-
 		// try to auth and get the token using api authentication
 		if (!$token = auth('api')->attempt($credentials)) {
 			// if the credentials are wrong we send an unauthorized error in json format
@@ -30,16 +28,12 @@ class UserController extends Controller
         }
 
         $user = auth('api')->user();
-        $gics = Gic::all()->where('zone_id',auth('api')->user()->zone_id);
-        $coops = Cooperative::all()->where('region_id',auth('api')->user()->region_id);
 
 		return response()->json([
 			'token' => $token,
 			'type' => 'bearer', // you can ommit this
 			'expires' => auth('api')->factory()->getTTL() * 60, // time to expiration
             'user'=>auth('api')->user(),
-            'gics'=>$gics,
-            'cooperatives'=>$coops,
 
 		]);
 	}
