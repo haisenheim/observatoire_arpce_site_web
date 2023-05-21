@@ -18,7 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['namespace'=>'App\Http\Controllers\Api'], function () {
+Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api'], function () {
     Route::post('/login', 'UserController@login');
     Route::get('/params','HomeController@getParams');
     Route::post('/sync','ExploitantController@sync');

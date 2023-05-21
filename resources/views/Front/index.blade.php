@@ -87,9 +87,9 @@
           <div class="carousel-item active" style="background-image: url({{ asset('Eterna/assets/img/slide/slide-1.jpg')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Eterna</span></h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                <h2 class="animate__animated animate__fadeInDown">Bienvenue sur <span>KEKA A KAFE</span></h2>
+                <p class="animate__animated animate__fadeInUp">Nous sommes la plus grande base de donnees de Cacayoculteur du Cameroun</p>
+                <a href="" class="btn-get-started animate__animated animate__fadeInUp">En savoir plus</a>
               </div>
             </div>
           </div>
