@@ -34,10 +34,10 @@ class HomeController extends Controller
         $activites = PojoResource::collection(Activite::all());
         $niveaux = PojoResource::collection(Niveau::all());
         $formations = PojoResource::collection(Formation::all());
-        $regions = PojoResource::collection(Region::all());
-        $departements = PojoResource::collection(Departement::all());
-        $arrondissements = PojoResource::collection(Arrondissement::all());
-        $villages = PojoResource::collection(Village::all());
+        $regions = Region::all();
+        $departements = Departement::all();
+        $arrondissements = Arrondissement::all();
+        $villages = Village::all();
         return response()->json([
             'situations'=>$situations,
             'activites'=>$activites,
