@@ -23,7 +23,7 @@ Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api'], functio
     Route::get('/params','HomeController@getParams');
     Route::post('/sync','ExploitantController@sync');
 });
-
+/*
 Route::group(['prefix' => 'v1','namespace'=>'Api\Agent','middleware'=>'jwt.verify'], function () {
     Route::get('/gics', 'GicController@index');
     Route::post('/gics', 'GicController@store');
@@ -31,3 +31,4 @@ Route::group(['prefix' => 'v1','namespace'=>'Api\Agent','middleware'=>'jwt.verif
     Route::get('/exploitants','ExploitantController@index');
     //Route::post('/sync','ExploitantController@sync');
    });
+ */
