@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api'], function () {
     Route::post('/login', 'UserController@login');
-    Route::get('/get-params','HomeController@getParams');
+    Route::get('/params','HomeController@getParams');
     Route::post('/sync','ExploitantController@sync');
 });
 
