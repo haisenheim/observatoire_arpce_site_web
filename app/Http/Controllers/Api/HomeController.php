@@ -7,8 +7,10 @@ use App\Http\Resources\PojoResource;
 use App\Models\Activite;
 use App\Models\Arrondissement;
 use App\Models\Client;
+use App\Models\Cooperative;
 use App\Models\Departement;
 use App\Models\Formation;
+use App\Models\Gic;
 use App\Models\Niveau;
 use App\Models\Pay;
 use App\Models\Region;
@@ -38,6 +40,8 @@ class HomeController extends Controller
         $departements = Departement::all();
         $arrondissements = Arrondissement::all();
         $villages = Village::all();
+        $cooperatives = Cooperative::all();
+        $gics = Gic::all();
         return response()->json([
             'situations'=>$situations,
             'activites'=>$activites,
@@ -47,6 +51,8 @@ class HomeController extends Controller
             'departements'=>$departements,
             'arrondissements'=>$arrondissements,
             'villages'=>$villages,
+            'gics'=>$gics,
+            'cooperatives'=>$cooperatives,
         ]);
 
     }
