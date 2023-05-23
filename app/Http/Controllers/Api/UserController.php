@@ -32,8 +32,8 @@ class UserController extends Controller
 		return response()->json([
 			'token' => $token,
 			'type' => 'bearer', // you can ommit this
-			'expires' => auth()->factory()->getTTL() * 60, // time to expiration
-            'user'=>auth()->user(),
+			//'expires' => auth('api')->factory()->getTTL() * 60, // time to expiration
+            'user'=>$user,
 
 		]);
 	}
