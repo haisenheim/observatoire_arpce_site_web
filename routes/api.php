@@ -22,6 +22,7 @@ Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api'], functio
     Route::post('/login', 'UserController@login');
     Route::get('/params','HomeController@getParams');
     Route::post('/sync','ExploitantController@sync');
+    Route::post('/campagne/identification/sync','ExploitantController@IdentificationSync')
 });
 /*
 Route::group(['prefix' => 'v1','namespace'=>'Api\Agent','middleware'=>'jwt.verify'], function () {
