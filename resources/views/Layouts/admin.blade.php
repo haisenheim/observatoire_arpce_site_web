@@ -161,6 +161,12 @@
               <p>Comptes utilisateur</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a style="font-style:italic" href="/admin/photos/upload" class="nav-link nav-light">
+              <i class="nav-icon fas fa-ellipsis-h"></i>
+              <p>Charger les photos</p>
+            </a>
+          </li>
 
         </ul>
       </nav>
