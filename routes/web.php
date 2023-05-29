@@ -39,6 +39,8 @@ Route::prefix('admin')
         Route::resource('agents', 'AgentController');
         Route::resource('zones', 'ZoneController');
         Route::resource('users', 'UserController');
+        Route::get('/photos/upload','ExploitantController@showUploadForm');
+        Route::post('/photos/upload','ExploitantController@upload');
         Route::get('user/enable/{token}', 'UserController@enable');
         Route::get('user/disable/{token}', 'UserController@disable');
 
