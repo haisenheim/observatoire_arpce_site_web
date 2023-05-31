@@ -30,10 +30,6 @@
                                 <th>TEL</th>
                                 <th>EMAIL</th>
                                 <th>ROLE</th>
-                                <th>REGION</th>
-                                <th>DEPARTEMENT</th>
-                                <th>ARRONDISSEMENT</th>
-                                <th>ZONE</th>
                                 <th></th>
                             </tr>
                     </thead>
@@ -106,11 +102,21 @@
                         <input type="text" name="password" required placeholder="Mot de passe" class="form-control">
                     </div>
                 </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <select name="role_id" required id="" class="form-control">
+                            <option value="">Role</option>
+                            @foreach ($roles as $role)
+                                <option value="{{ $role->id }}">{{ $role->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                </div>
               </div>
           </fieldset>
         </div>
         <div class="modal-footer justify-content-between">
-          <button type="submit" class="btn btn-primary">Enregistrer</button>
+          <button type="submit" class="btn btn-warning">Enregistrer</button>
         </div>
         </form>
       </div>
