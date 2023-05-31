@@ -19,8 +19,8 @@ class Village extends Model
         return $this->hasMany('App\Models\Exploitant');
     }
 
-    public function agents()
+    public function arrondissement()
     {
-        return $this->hasMany('App\Models\Agent');
+        return $this->belongsTo('App\Models\Arrondissement');
     }
 }
