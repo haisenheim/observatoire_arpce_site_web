@@ -41,13 +41,10 @@
                         @foreach ($users as $p)
                             <tr>
                                 <td>{{ $p->name }}</td>
-                                <td>{{ $p->name }}</td>
+                                <td>{{ $p->phone }}</td>
                                 <td>{{ $p->email }}</td>
                                 <td>{{ $p->role?$p->role->name:'-' }}</td>
-                                <td>{{ $p->region?$p->region->name:'-' }}</td>
-                                <td>{{ $p->departement?$p->departement->name:'-' }}</td>
-                                <td>{{ $p->arrondissement?$p->arrondissement->name:'-' }}</td>
-                                <td>{{ $p->zone?$p->zone->name:'-' }}</td>
+
                                 <td>
                                     <ul class="list-inline">
                                         @if($p->active)

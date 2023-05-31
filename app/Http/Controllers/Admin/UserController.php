@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
+use App\Models\User;
 use App\Models\Zone;
-use App\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -18,7 +19,8 @@ class UserController extends Controller
     {
         //
         $users = User::all();
-        return view('/Admin/Users/index')->with(compact('users'));
+        $roles = Role::all();
+        return view('/Admin/Users/index')->with(compact('users','roles'));
     }
 
 
@@ -47,7 +49,7 @@ class UserController extends Controller
         $data = $request->all();
         $data['token'] = sha1(date('Yhmdsi'). auth()->user()->id);
         $data['password'] = bcrypt($data['password']);
-        $data['role_id'] = 1;
+        $data['role_id'] = $request->role_id;
         User::create($data);
         return back();
     }
