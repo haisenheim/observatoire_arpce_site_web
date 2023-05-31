@@ -25,7 +25,4 @@ class Agent extends Authenticatable
         return $this->last_name . " ".$this->first_name;
     }
 
-    
-
-
 }
