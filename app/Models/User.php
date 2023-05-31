@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function getDateFormat() {
         return 'Y-d-m H:i:s';
     }
+
+    public function role(){
+        return $this->belongsTo('App\Models\Role');
+    }
 }
