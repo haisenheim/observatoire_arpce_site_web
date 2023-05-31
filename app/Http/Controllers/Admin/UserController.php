@@ -46,10 +46,12 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data['name'] = request()->name;
         $data['token'] = sha1(date('Yhmdsi'). auth()->user()->id);
-        $data['password'] = bcrypt($data['password']);
-        $data['role_id'] = $request->role_id;
+        $data['password'] = bcrypt(request()->password);
+        $data['role_id'] = request()->role_id;
+        $data['phone'] = request()->phone;
+        $data['email'] = request()->email;
         User::create($data);
         return back();
     }
