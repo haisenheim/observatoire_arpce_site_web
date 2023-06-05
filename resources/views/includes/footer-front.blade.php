@@ -1,107 +1,104 @@
-<div id="fh5co-register">
-    <div class="overlay"></div>
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2 animate-box">
-            <div class="date-counter text-center">
-                <h2>LA RENTREE ACADEMIQUE S'APPROCHE A GRANDS PAS</h2>
-                <h3>Les inscriptions ont debute</h3>
-                <div class="simply-countdown simply-countdown-one"></div>
-                <p><strong>Reservez votre Place</strong></p>
+ <!-- ======= Footer ======= -->
+ <footer id="footer">
 
-            </div>
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<footer id="fh5co-footer" role="contentinfo">
-    <div class="overlay"></div>
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>About Eterna</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
     <div class="container">
-        <div class="row row-pb-md">
-            <div class="col-md-3 fh5co-widget">
-                <h3>About Education</h3>
-                <p>Facilis ipsum reprehenderit nemo molestias. Aut cum mollitia reprehenderit. Eos cumque dicta adipisci architecto culpa amet.</p>
-            </div>
-            <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                <h3>Learning</h3>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Course</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Meetups</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                <h3>Learn &amp; Grow</h3>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Testimonials</a></li>
-                    <li><a href="#">Handbook</a></li>
-                    <li><a href="#">Held Desk</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                <h3>Engage us</h3>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Marketing</a></li>
-                    <li><a href="#">Visual Assistant</a></li>
-                    <li><a href="#">System Analysis</a></li>
-                    <li><a href="#">Advertise</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1 fh5co-widget">
-                <h3>Legal</h3>
-                <ul class="fh5co-footer-links">
-                    <li><a href="#">Find Designers</a></li>
-                    <li><a href="#">Find Developers</a></li>
-                    <li><a href="#">Teams</a></li>
-                    <li><a href="#">Advertise</a></li>
-                    <li><a href="#">API</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="row copyright">
-            <div class="col-md-12 text-center">
-                <p>
-                    <small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small>
-                    <small class="block">Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a> &amp; <a href="https://www.pexels.com/" target="_blank">Pexels</a></small>
-                </p>
-            </div>
-        </div>
-
+      <div class="copyright">
+        &copy; Copyright <strong><span>Eterna</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
     </div>
-</footer>
-</div>
+  </footer><!-- End Footer -->
 
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
-</div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-crossorigin=""></script>
-<script>
-    var map = L.map('map').setView([51.505, -0.09], 13);
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('Eterna/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ asset('Eterna/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ asset('Eterna/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ asset('Eterna/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ asset('Eterna/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ asset('Eterna/assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ asset('Eterna/assets/vendor/php-email-form/validate.js') }}"></script>
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([51.5, -0.09]).addTo(map)
-    .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-    .openPopup();
-</script>
+  <!-- Template Main JS File -->
+  <script src="{{ asset('Eterna/assets/js/main.js') }}"></script>
 
 </body>
+
 </html>

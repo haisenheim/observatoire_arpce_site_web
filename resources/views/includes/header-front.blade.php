@@ -1,105 +1,71 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ANPCC &mdash; ASSOCIATION</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
-	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
-	<meta name="author" content="freehtml5.co" />
+<!DOCTYPE html>
+<html lang="en">
 
-	<!--
-	//////////////////////////////////////////////////////
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-	FREE HTML5 TEMPLATE
-	DESIGNED & DEVELOPED by FreeHTML5.co
+  <title>OND |Observatoire du Numerique Durable</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-	//////////////////////////////////////////////////////
-	 -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-  	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  <!-- Vendor CSS Files -->
+  <link href="{{ asset('Eterna/assets/vendor/animate.css/animate.min.cs') }}s" rel="stylesheet">
+  <link href="{{ asset('Eterna/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('Eterna/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ asset('Eterna/assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('Eterna/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ asset('Eterna/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
 
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">
+  <!-- Template Main CSS File -->
+  <link href="{{ asset('Eterna/assets/css/style.css') }}" rel="stylesheet">
+</head>
 
-	<!-- Animate.css -->
-    <link rel="stylesheet" href="css-front/animate.css">
-    <link href="{{ asset('css-front/bootstrap.css') }} " rel="stylesheet" />
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css-front/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css-front/bootstrap.css">
+<body>
 
-	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css-front/magnific-popup.css">
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
 
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css-front/owl.carousel.min.css">
-	<link rel="stylesheet" href="css-front/owl.theme.default.min.css">
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
 
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css-front/flexslider.css">
+      <div class="logo">
+       <!-- <h1><a href="/">Eterna</a></h1> -->
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
+      </div>
 
-	<!-- Pricing -->
-	<link rel="stylesheet" href="css-front/pricing.css">
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active" href="/">Accueil</a></li>
+          <li><a href="#">A PROPOS</a></li>
+          <li><a href="#">PUBLICATIONS</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a class="btn btn-sm btn-success" style="margin-left: 10px; padding:5px; background: #3d9970; color:azure" href="/login">Connexion</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
 
-	<!-- Theme style  -->
-    <link rel="stylesheet" href="css-front/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-
-	</head>
-	<body>
-
-	<div class="fh5co-loader"></div>
-
-	<div id="page">
-	<nav class="fh5co-nav" role="navigation">
-
-		<div style="padding-top:5px" class="top-menu">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-2">
-                        <div id="fh5co-logo"><a href="/">
-                            <span>ANPCC</span>
-                        </div>
-					</div>
-					<div class="col-xs-10 text-right menu-1">
-						<ul>
-							<li class="active"><a href="/">Accueil</a></li>
-
-							<li><a href="/about">A Propos</a></li>
-
-							<li><a href="/contact">Contact</a></li>
-							<li class="btn-cta"><a href="/login"><span>Se connecter</span></a></li>
-
-						</ul>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</nav>
+    </div>
+  </header><!-- End Header -->
