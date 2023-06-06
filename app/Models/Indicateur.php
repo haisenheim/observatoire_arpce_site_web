@@ -16,9 +16,7 @@ class Indicateur extends Model
         return $this->belongsTo('App\Models\Entreprise');
     }
 
-    public function annee(){
-        return $this->belongsTo('App\Models\Annee');
-    }
+
 
     public function type()
     {

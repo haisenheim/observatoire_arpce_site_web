@@ -32,19 +32,7 @@ class HomeController extends Controller
             }
 
             if(Auth::user()->role_id==2){
-                return redirect('regional/dashboard');
-            }
-
-            if(Auth::user()->role_id==3){
-                return redirect('departemental/dashboard');
-            }
-
-            if(Auth::user()->role_id==4){
-                return redirect('communal/dashboard');
-            }
-
-            if(Auth::user()->role_id==5){
-                return redirect('zone/dashboard');
+                return redirect('/');
             }
 
             else{

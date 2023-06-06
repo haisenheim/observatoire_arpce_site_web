@@ -42,10 +42,13 @@ Route::prefix('admin')
     ->group(function(){
         Route::get('/dashboard','DashboardController@index');
         Route::resource('entreprises', 'EntrepriseController');
+        Route::resource('articles', 'ArticleController');
         Route::get('indicateurs', 'IndicateurController@index');
         Route::post('indicateurs', 'IndicateurController@store');
         Route::get('params', 'ParamController@index');
         Route::post('params', 'ParamController@store');
+        Route::get('categories', 'CategoryController@index');
+        Route::post('categories', 'CategoryController@store');
         Route::resource('slides', 'SlideController');
         Route::resource('blog', 'BlogController');
         Route::resource('about', 'AboutController');

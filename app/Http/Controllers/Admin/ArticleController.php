@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Exports\PointExport;
-use App\Http\Controllers\Controller;
-use App\Models\Exploitant;
-use App\Models\Parcelle;
-use App\Models\Region;
+use App\Http\Controllers\ExtendedController;
+use App\Models\Article;
+use App\Models\Category;
+use App\Models\Slide;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
-class ExploitantController extends Controller
+class ArticleController extends ExtendedController
 {
     /**
      * Display a listing of the resource.
@@ -20,22 +19,12 @@ class ExploitantController extends Controller
     public function index()
     {
         //
-        $exploitants = Exploitant::all();
-        return view('/Admin/Exploitants/index')->with(compact('exploitants'));
+        $articles = Article::all();
+        $categories = Category::all();
+        return view('/Admin/Articles/index')->with(compact('articles','categories'));
     }
 
-    public function showUploadForm(){
-        return view('Admin/Exploitants/upload');
-    }
 
-    public function upload(){
-        $request = request();
-        $image = $request->file('file');
-        $FileName = $image->getClientOriginalName();
-        //dd($FileName);
-        $image->move(public_path('img/producteurs'), $FileName);
-        return response()->json(['success' => $FileName]);
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -55,8 +44,16 @@ class ExploitantController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Region::create($data);
+        $data['name'] = $request->name;
+        $data['body'] = $request->body;
+        $data['category_id'] = $request->category_id;
+        $data['user_id'] = auth()->user()->id;
+        $image = request()->image_uri;
+        if($image){
+            $path = $this->entityImgCreate($image,'articles',time());
+            $data['image_uri'] = $path;
+        }
+        $slide = Article::create($data);
         return back();
     }
 

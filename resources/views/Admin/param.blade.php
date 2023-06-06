@@ -35,6 +35,13 @@
                         </div>
                     </div>
 
+                    <div class="col-md-6 col-sm-12">
+                        <div class="form-group">
+                            <label for="">LIEN LINKEDIN</label>
+                            <input type="text" name="linkedin_uri" value="{{ $param->linkedin_uri }}" required placeholder="lien linkedin" class="form-control">
+                        </div>
+                    </div>
+
                     <div class="col-md-12 col-sm-12">
                         <div class="form-group">
                             <label for="">LOGO </label>

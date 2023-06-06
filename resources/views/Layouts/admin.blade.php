@@ -80,7 +80,15 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/indicateurs" class="nav-link {{ $active==2?'active':'' }}">
+            <a href="/admin/rapports" class="nav-link {{ $active==3?'active':'' }}">
+              <i class="nav-icon fas fa-chart-bar"></i>
+              <p>
+                RAPPORTS
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/admin/indicateurs" class="nav-link {{ $active==4?'active':'' }}">
               <i class="nav-icon fas fa-chart-pie"></i>
               <p>
                 INDICATEURS
@@ -88,10 +96,18 @@
             </a>
           </li>
           <li class="nav-item">
+            <a href="/admin/articles" class="nav-link {{ $active==5?'active':'' }}">
+                <i class="nav-icon fas fa-edit"></i>
+              <p>
+                PUBLICATIONS
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-cog"></i>
               <p>
-                Parametres du site
+                PARAMETRES
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
@@ -111,13 +127,13 @@
               <li class="nav-item">
                 <a href="/admin/about" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>A PROPOS</p>
+                  <p>PAGE APROPOS</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/blog" class="nav-link">
+                <a href="/admin/categories" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PUBLICATIONS</p>
+                  <p>CAT. DE PUBLICATIONS</p>
                 </a>
               </li>
             </ul>

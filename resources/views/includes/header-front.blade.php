@@ -15,7 +15,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Vendor CSS Files -->
   <link href="{{ asset('Eterna/assets/vendor/animate.css/animate.min.cs') }}s" rel="stylesheet">
   <link href="{{ asset('Eterna/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -56,7 +57,10 @@
         <a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
       </div>
 
-      <?php  $active = \Illuminate\Support\Facades\Session::get('active'); ?>
+      <?php
+            $active = \Illuminate\Support\Facades\Session::get('active');
+            $auth = auth()->user();
+            ?>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -64,7 +68,24 @@
           <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
           <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
           <li><a class="{{ $active==4?'active':'' }}" href="/contact">CONTACT</a></li>
-          <li><a class="btn btn-sm btn-success" style="margin-left: 10px; padding:5px; background: #3d9970; color:azure" href="/login">Connexion</a></li>
+          @if($auth)
+        <li class="dropdown">
+            <a class="">
+                <div class="text-center">
+                    <i style="font-size:25px;" class="bi bi-person"></i>
+                    <p><small>{{ $auth->name }}</small><i class="bi bi-chevron-down"></i></p>
+                </div>
+            </a>
+            <ul>
+                <li><a href="/profil">Profil</a></li>
+                <li><a href="/compte/rapports">Rapports</a></li>
+                <li><a href="/logout">Se deconnecter</a></li>
+            </ul>
+        </li>
+
+          @else
+            <li><a class="btn btn-sm btn-success" style="margin-left: 10px; padding:5px; background: #3d9970; color:azure" href="/login">Connexion</a></li>
+          @endif
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
