@@ -35,7 +35,6 @@
                 $active = \Illuminate\Support\Facades\Session::get('active');
                 use Carbon\Carbon;
                 $locale = app()->getLocale();
-
                 Carbon::setlocale($locale);
                 $date = Carbon::now();
                 $translatedDate = $date->translatedFormat('D, j M Y, H:i:s');
@@ -57,7 +56,6 @@
       <p style="text-align:center;">
         <a style="color:#fff; font-size:1.4rem;" href="/logout">Se déconnecter</a>
       </p>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -72,84 +70,54 @@
               </p>
             </a>
           </li>
+
           <li class="nav-item">
-            <a href="/admin/producteurs" class="nav-link {{ $active==21?'active':'' }}">
-              <i class="nav-icon fas fa-users"></i>
+            <a href="/admin/entreprises" class="nav-link {{ $active==2?'active':'' }}">
+              <i class="nav-icon fas fa-home"></i>
               <p>
-                Producteurs
+                ENTREPRISES
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/admin/cooperatives" class="nav-link {{ $active==2?'active':'' }}">
-              <i class="nav-icon fas fa-home"></i>
+            <a href="/admin/indicateurs" class="nav-link {{ $active==2?'active':'' }}">
+              <i class="nav-icon fas fa-chart-pie"></i>
               <p>
-                Cooperatives
-              </p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="/admin/gics" class="nav-link {{ $active==3?'active':'' }}">
-              <i class="nav-icon fas fa-home"></i>
-              <p>
-                Gics
+                INDICATEURS
               </p>
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
+              <i class="nav-icon fas fa-cog"></i>
               <p>
-                Territoire
+                Parametres du site
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="/admin/params" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>INFOS</p>
+                    </a>
+                  </li>
               <li class="nav-item">
-                <a href="/admin/regions" class="nav-link">
+                <a href="/admin/slides" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Regions</p>
+                  <p>SLIDES</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/departements" class="nav-link">
+                <a href="/admin/about" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Departements</p>
+                  <p>A PROPOS</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/arrondissements" class="nav-link">
+                <a href="/admin/blog" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Arrondissements</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-search"></i>
-              <p>
-                Parametres
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="/admin/formations" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Formations</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/admin/activites" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Activites</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/admin/domaines" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Domaines de formation</p>
+                  <p>PUBLICATIONS</p>
                 </a>
               </li>
             </ul>
@@ -159,12 +127,6 @@
             <a style="font-style:italic" href="/admin/users" class="nav-link nav-light">
               <i class="nav-icon fas fa-ellipsis-h"></i>
               <p>Comptes utilisateur</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a style="font-style:italic" href="/admin/photos/upload" class="nav-link nav-light">
-              <i class="nav-icon fas fa-ellipsis-h"></i>
-              <p>Charger les photos</p>
             </a>
           </li>
 

@@ -9,7 +9,7 @@
     <div class="col-sm-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-        <li class="breadcrumb-item active">Regions</li>
+        <li class="breadcrumb-item active">users</li>
       </ol>
     </div><!-- /.col -->
   </div><!-- /.row -->
@@ -19,7 +19,7 @@
   <div class="">
         <div class="card card-light">
             <div class="card-header">
-                <div class="pull-right"><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-info"><i class="fa fa-plus-circle" title="Ajouter une region"></i></button></div>
+                <div class="pull-right"><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter une region"></i></button></div>
             </div>
             <div class="card-body table-responsive">
 

@@ -15,7 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () {
 	return view('Front/index');
-});
+})->middleware('active');
+
+Route::get('/about', function () {
+	return view('Front/about');
+})->middleware('active');
+
+Route::get('/blog', function () {
+	return view('Front/blog');
+})->middleware('active');
+
+Route::get('/contact', function () {
+	return view('Front/contact');
+})->middleware('active');
+
+
+
 Auth::routes();
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
@@ -26,21 +41,15 @@ Route::prefix('admin')
     ->name('admin.')
     ->group(function(){
         Route::get('/dashboard','DashboardController@index');
-        Route::resource('formations', 'FormationController');
-        Route::resource('domaines', 'DomaineController');
-        Route::resource('regions', 'RegionController');
-        Route::resource('formations', 'FormationController');
-        Route::resource('activites', 'ActiviteController');
-        Route::resource('cooperatives', 'CooperativeController');
-        Route::resource('gics', 'GicController');
-        Route::resource('producteurs', 'ExploitantController');
-        Route::get('parcelle/{id}','ExploitantController@getParcelle');
-        Route::get('parcelle/export/{id}','ExploitantController@exportParcelle');
-        Route::resource('agents', 'AgentController');
-        Route::resource('zones', 'ZoneController');
+        Route::resource('entreprises', 'EntrepriseController');
+        Route::get('indicateurs', 'IndicateurController@index');
+        Route::post('indicateurs', 'IndicateurController@store');
+        Route::get('params', 'ParamController@index');
+        Route::post('params', 'ParamController@store');
+        Route::resource('slides', 'SlideController');
+        Route::resource('blog', 'BlogController');
+        Route::resource('about', 'AboutController');
         Route::resource('users', 'UserController');
-        Route::get('/photos/upload','ExploitantController@showUploadForm');
-        Route::post('/photos/upload','ExploitantController@upload');
         Route::get('user/enable/{token}', 'UserController@enable');
         Route::get('user/disable/{token}', 'UserController@disable');
 

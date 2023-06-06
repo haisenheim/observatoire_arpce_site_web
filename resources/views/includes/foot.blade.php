@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; {{ date('Y') }} <span>KEKA A KAFE</span></strong>
+    <strong>Copyright &copy; {{ date('Y') }} <span>OBSERVATOIRE DU NUMERIQUE DURABLE</span></strong>
 
     <div class="float-right d-none d-sm-inline-block">
         Conditions générales et confidentialité

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KEKA A KAFE | CONNEXION</title>
-
+  <title>OND|CONNEXION</title>
+  <link href="img/favicon.png" rel="icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
@@ -16,15 +16,16 @@
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
-  <div class="login-logo">
-    <a href="">
-        <img height="160" src="{{ asset('img/logo.png') }}" alt="">
-    </a>
-  </div>
+
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg" style="color:#883D1A">Se connecter pour entrer dans votre espace</p>
+        <div class="login-logo">
+            <a href="">
+                <img height="160" src="{{ asset('img/logo.png') }}" alt="">
+            </a>
+          </div>
+      <p class="login-box-msg" style="color:#3d9970">Se connecter pour entrer dans votre espace</p>
 
       <form action="{{ route('login') }}" method="post">
         @csrf
@@ -55,7 +56,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-12">
-            <button type="submit" style="background: #883D1A; color: white" class="btn btn-block">Se connecter</button>
+            <button type="submit" style="background: #3d9970; color: white" class="btn btn-block">Se connecter</button>
           </div>
           <!-- /.col -->
         </div>

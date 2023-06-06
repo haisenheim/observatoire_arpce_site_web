@@ -56,12 +56,14 @@
         <a href="index.html"><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
       </div>
 
+      <?php  $active = \Illuminate\Support\Facades\Session::get('active'); ?>
+
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="/">Accueil</a></li>
-          <li><a href="#">A PROPOS</a></li>
-          <li><a href="#">PUBLICATIONS</a></li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a class="{{ $active==1?'active':'' }}" href="/">Accueil</a></li>
+          <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
+          <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
+          <li><a class="{{ $active==4?'active':'' }}" href="/contact">CONTACT</a></li>
           <li><a class="btn btn-sm btn-success" style="margin-left: 10px; padding:5px; background: #3d9970; color:azure" href="/login">Connexion</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
