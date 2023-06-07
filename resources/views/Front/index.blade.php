@@ -14,9 +14,11 @@
           <div class="carousel-item active" style="background-image: url({{ asset('Eterna/assets/img/slide/slide-1.jpg')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Bienvenue sur <span>KEKA A KAFE</span></h2>
-                <p class="animate__animated animate__fadeInUp">Nous sommes la plus grande base de donnees de Cacayoculteur du Cameroun</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">En savoir plus</a>
+                <h2 class="animate__animated animate__fadeInDown">Bienvenue à l'<span>Observatoire</span> du Numérique <span>Soutenable</span></h2>
+                <p class="animate__animated animate__fadeInUp">Découvrez l'observatoire dédié à la mesure et à la réduction de l'empreinte carbone
+                    du secteur numérique au Congo. Explorez les données, les indicateurs et les initiatives pour
+                    un avenir numérique durable.</p>
+
               </div>
             </div>
           </div>
@@ -25,9 +27,11 @@
           <div class="carousel-item" style="background-image: url({{ asset('Eterna/assets/img/slide/slide-2.jpg')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated fanimate__adeInDown">Lorem <span>Ipsum Dolor</span></h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                <h2 class="animate__animated fanimate__adeInDown">Agissez pour un <span>numérique responsable</span></h2>
+                <p class="animate__animated animate__fadeInUp">Découvrez comment vous pouvez contribuer à réduire l'empreinte carbone du
+                    numérique. Apprenez les bonnes pratiques, adoptez des technologies éco-responsables et
+                    participez à des initiatives pour un impact positif sur l'environnement.</p>
+
               </div>
             </div>
           </div>
@@ -36,9 +40,9 @@
           <div class="carousel-item" style="background-image: url({{ asset('Eterna/assets/img/slide/slide-3.jpg')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Sequi ea <span>Dime Lara</span></h2>
-                <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-                <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+                <h2 class="animate__animated animate__fadeInDown">Suivez les <span>progrès</span> et les <span>initiatives</span></h2>
+                <p class="animate__animated animate__fadeInUp">Explorez notre tableau de bord interactif pour suivre les performances
+                    environnementales du secteur numérique au Congo.</p>
               </div>
             </div>
           </div>
