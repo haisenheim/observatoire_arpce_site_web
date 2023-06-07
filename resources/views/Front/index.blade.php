@@ -1,7 +1,7 @@
 @extends('Layouts/front')
 
 @section('content')
-
+<script src="{{ asset('js/chart.min.js') }}"></script>
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
@@ -131,7 +131,24 @@
         <h3 class="text-center">consommation d'électricité en Kwh</h3>
         <div class="row">
             <div class="col-md-5 col-sm-12">
-                <p>Ici les chiffres</p>
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec1 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td>{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="col-md-7 col-sm-12">
                 <p>Ici le graphique</p>
@@ -141,7 +158,24 @@
         <h3 class="text-center">consommation eau en m3</h3>
         <div class="row">
             <div class="col-md-5 col-sm-12">
-                <p>Ici les chiffres</p>
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec2 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td>{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="col-md-7 col-sm-12">
                 <p>Ici le graphique</p>
@@ -150,7 +184,24 @@
         <h3 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h3>
         <div class="row">
             <div class="col-md-5 col-sm-12">
-                <p>Ici les chiffres</p>
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec3 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td>{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="col-md-7 col-sm-12">
                 <p>Ici le graphique</p>

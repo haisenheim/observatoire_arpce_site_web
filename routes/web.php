@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\OperateurController;
+use App\Models\Indicateur;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-	return view('Front/index');
+    $indicateurs = Indicateur::all();
+    $electricite = $indicateurs->where('type_id',1);
+    $eau = $indicateurs->where('type_id',2);
+    $ges = $indicateurs->where('type_id',3);
+    $grp1 = $electricite->groupBy('annee');
+    $grp2 = $eau->groupBy('annee');
+    $grp3 = $ges->groupBy('annee');
+    $sec1 = $grp1->map(function($k){
+        return $k->reduce(function($carry,$item){
+            return $carry + $item->valeur;
+        });
+    });
+    $sec2 = $grp2->map(function($k){
+        return $k->reduce(function($carry,$item){
+            return $carry + $item->valeur;
+        });
+    });
+    $sec3 = $grp3->map(function($k){
+        return $k->reduce(function($carry,$item){
+            return $carry + $item->valeur;
+        });
+    });
+    //dd($sec1);
+	return view('Front/index')->with(compact('sec1','sec2','sec3'));
 })->middleware('active');
 
 Route::get('/about', function () {
