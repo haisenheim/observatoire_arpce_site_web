@@ -1,22 +1,11 @@
 
 @extends('Layouts.front')
 
-@section('content-header')
-<div class="row mb-2">
-    <div class="col-sm-6">
-      <h1 class="m-0">RAPPORTS</h1>
-    </div><!-- /.col -->
-    <div class="col-sm-6">
-      <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Accueil</a></li>
-        <li class="breadcrumb-item active">Rapports</li>
-      </ol>
-    </div><!-- /.col -->
-  </div><!-- /.row -->
-@endsection
-
 @section('content')
-  <div class="">
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+<script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+  <div style="max-height:300px; overflow: scroll;" class="">
         <div class="card card-light">
             <div class="card-body">
                 <div class="card-header">
@@ -34,7 +23,7 @@
                         @foreach ($rapports as $p)
                             <tr>
                                 <td>{{ $p->annee }}</td>
-                                <td><a href="{{ $p->fichier }}"></a> {{ $p->name }}</td>
+                                <td><a href="{{ $p->fichier }}"> {{ $p->name }} </a></td>
 
                                 <td></td>
                             </tr>
@@ -44,8 +33,10 @@
             </div>
         </div>
   </div>
+@endsection
 
-  <div class="modal fade" id="addFournisseur">
+@section('modal')
+<div class="modal fade" id="addFournisseur">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -54,19 +45,25 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form method="POST" enctype="multipart/form-data" action="/admin/rapports">
+        <form method="POST" enctype="multipart/form-data" action="/account/rapports">
         <div class="modal-body">
             @csrf
           <div class="row">
+
               <div class="col-md-12 col-sm-12">
                   <div class="form-group">
-                      <input type="text" name="name" placeholder="Intitule" class="form-control">
+                      <input type="text" name="name" required placeholder="Intitule" class="form-control">
                   </div>
               </div>
-              <div class="col-md-12 col-sm-12">
+              <div class="col-md-12 col-sm-12 mt-3">
+                <div class="form-group">
+                    <input type="number" name="annee" required placeholder="Annee" class="form-control">
+                </div>
+            </div>
+              <div class="col-md-12 col-sm-12 mt-3">
                 <div class="form-group">
                     <label for="">FICHIER PDF</label>
-                    <input type="file" name="name" placeholder="Intitule" class="form-control">
+                    <input type="file" name="fichier_uri" required class="form-control">
                 </div>
             </div>
 

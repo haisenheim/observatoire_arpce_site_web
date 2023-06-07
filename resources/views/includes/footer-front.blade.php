@@ -98,7 +98,7 @@
 
   <!-- Template Main JS File -->
   <script src="{{ asset('Eterna/assets/js/main.js') }}"></script>
-
+  @yield('modal')
 </body>
 
 </html>

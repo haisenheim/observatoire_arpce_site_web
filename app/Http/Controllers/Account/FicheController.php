@@ -8,7 +8,7 @@ use App\Models\Rapport;
 use App\Models\Region;
 use Illuminate\Http\Request;
 
-class RapportController extends ExtendedController
+class FicheController extends ExtendedController
 {
     /**
      * Display a listing of the resource.
@@ -57,7 +57,7 @@ class RapportController extends ExtendedController
         return back();
     }
 
-  
+
 
 
 }

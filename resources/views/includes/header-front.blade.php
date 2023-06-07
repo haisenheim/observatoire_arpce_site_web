@@ -27,6 +27,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{{ asset('Eterna/assets/css/style.css') }}" rel="stylesheet">
+  <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 
 <body>
@@ -65,7 +66,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="{{ $active==1?'active':'' }}" href="/">Accueil</a></li>
-          <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
+          <li><a class="{{ $active==2?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a></li>
           <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
           <li><a class="{{ $active==4?'active':'' }}" href="/contact">CONTACT</a></li>
           @if($auth)

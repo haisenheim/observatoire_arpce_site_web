@@ -1,97 +1,157 @@
 @extends('Layouts/front')
 
 @section('content')
+<script src="{{ asset('js/chart.min.js') }}"></script>
 <main id="main">
-
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>About Us</li>
+          <li><a href="/">Accueil</a></li>
+          <li>Tableau de bord</li>
         </ol>
-        <h2>About Us</h2>
+        <h2>DONNEES ENVIRONNEMENTALES</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>TABLEAU DE BORD DES DONNEES ENVIRONNEMENTALES </h2>
+            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          </div>
       <div class="container">
+        <hr/>
+        <div class="section-title">
+            <h5 class="text-center">consommation d'électricité en Kwh</h5>
+        </div>
 
         <div class="row">
-          <div class="col-lg-6">
-            <img src="assets/img/about.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content">
-            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-            </ul>
-            <p>
-              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-              culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec1 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td style="text-align: right">{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div style="width: 500px;"><canvas id="elec"></canvas></div>
+            </div>
+        </div>
+        <hr/>
+        <div class="section-title">
+            <h5 class="text-center">Consommation eau en m3</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec2 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td style="text-align: right">{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div style="width: 500px;"><canvas id="eau"></canvas></div>
+            </div>
+        </div>
+        <hr/>
+        <div class="section-title">
+            <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec3 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td style="text-align: right">{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div style="width: 500px;"><canvas id="ges"></canvas></div>
+            </div>
+        </div>
+
+        <hr/>
+        <div class="section-title">
+            <h5 class="text-center">Repartition des sources d'energie</h5>
+        </div>
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>SOURCE</th>
+                                <th>POURCENTAGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>E2C</td>
+                                <td style="text-align: right">{{ $source->e2c }}%</td>
+                            </tr>
+                            <tr>
+                                <td>Groupe electrogene</td>
+                                <td style="text-align: right">{{ $source->ge }}%</td>
+                            </tr>
+                            <tr>
+                                <td>Renouvelable</td>
+                                <td style="text-align: right">{{ $source->er }}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
+            </div>
         </div>
 
       </div>
-    </section><!-- End About Section -->
+    </section><!-- End Services Section -->
 
-    <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts">
-      <div class="container">
 
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Happy Clients</strong> consequuntur quae qui deca rode</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Projects</strong> adipisci atque cum quia aut numquam delectus</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hours Of Support</strong> aut commodi quaerat. Aliquam ratione</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-people"></i>
-              <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Hard Workers</strong> rerum asperiores dolor molestiae doloribu</p>
-              <a href="#">Find out more &raquo;</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Counts Section -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">
@@ -118,100 +178,146 @@
 
       </div>
     </section><!-- End Clients Section -->
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Testimonials</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6">
-            <div class="testimonial-item">
-              <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="testimonial-item mt-4 mt-lg-0">
-              <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-          <div class="col-lg-6">
-            <div class="testimonial-item mt-4">
-              <img src="assets/img/testimonials/testimonials-6.jpg" class="testimonial-img" alt="">
-              <h3>Emily Harison</h3>
-              <h4>Store Owner</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Eius ipsam praesentium dolor quaerat inventore rerum odio. Quos laudantium adipisci eius. Accusamus qui iste cupiditate sed temporibus est aspernatur. Sequi officiis ea et quia quidem.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Testimonials Section -->
-
   </main><!-- End #main -->
+  <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
+  <script>
+    $(document).ready(function(){
+        $.ajax({
+            url:'/data',
+            type:'get',
+            dataType:'json',
+            success:function(secs){
+                //console.log(Object.keys(secs.sec1));
+                var arr1 = Object.entries(secs.elec);
+                lab1 = arr1.map((el)=>el[1].annee)
+                dat1 = arr1.map((el)=>el[1].valeur)
+                var arr2 = Object.entries(secs.eau);
+                lab2 = arr2.map((el)=>el[1].annee)
+                dat2 = arr2.map((el)=>el[1].valeur)
+                var arr3 = Object.entries(secs.ges);
+                lab3 = arr3.map((el)=>el[1].annee)
+                dat3 = arr3.map((el)=>el[1].valeur);
+                dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
+                console.log(dat4);
+
+               // var l1 = Object.keys(secs.sec1);
+               // var d1 = Object.values(secs.sec1);
+
+                new Chart(
+                    document.getElementById('elec'),
+                    {
+                    type: 'line',
+                    options: {
+                        animation: false,
+                        plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                        }
+                    },
+                    data: {
+                        labels: lab1,
+                        datasets: [
+                        {
+                            label: 'Consommation electrique',
+                            data: dat1,
+                            borderColor: '#3d9970',
+                        }
+                        ]
+                    }
+                    }
+                );
+                new Chart(
+                    document.getElementById('eau'),
+                    {
+                    type: 'bar',
+                    options: {
+                        animation: false,
+                        plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                        }
+                    },
+                    data: {
+                        labels: lab2,
+                        datasets: [
+                        {
+                            label: 'Consommation d\'eau',
+                            data: dat2,
+                            backgroundColor: '#3d9970',
+                        }
+                        ]
+                    }
+                    }
+                );
+                new Chart(
+                    document.getElementById('ges'),
+                    {
+                    type: 'line',
+                    options: {
+                        animation: false,
+                        plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                        }
+                    },
+                    data: {
+                        labels: lab3,
+                        datasets: [
+                        {
+                            label: 'Gaz a effet de serre',
+                            data: dat3,
+                            borderColor: '#3d9970',
+                        }
+                        ]
+                    }
+                    }
+                );
+                new Chart(
+                    document.getElementById('source'),
+                    {
+                    type: 'pie',
+                    options: {
+                        animation: false,
+                        plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: false
+                        }
+                        }
+                    },
+                    data: {
+                        //labels: lab3,
+                        datasets: [
+                        {
+                            label: 'Repartition',
+                            data: dat4,
+                            //borderColor: '#3d9970',
+                            backgroundColor: ['#3080d0','#c11b1b','#3d9970'],
+                        }
+                        ]
+                    }
+                    }
+                );
+
+              },
+            error:function(err){
+                console.log(err);
+            }
+        });
+    });
+  </script>
 @endsection

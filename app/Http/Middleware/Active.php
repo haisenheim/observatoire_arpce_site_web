@@ -22,7 +22,7 @@ class Active
 
         Session::put('active', 1);
 
-	    if(in_array('about',$path)){
+	    if(in_array('dashboard',$path)){
 		    Session::put('active', 2);
 	    }
 

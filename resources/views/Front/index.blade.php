@@ -1,7 +1,6 @@
 @extends('Layouts/front')
 
 @section('content')
-<script src="{{ asset('js/chart.min.js') }}"></script>
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container">
@@ -121,95 +120,6 @@
       </div>
     </section><!-- End About Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-        <div class="section-title">
-            <h2>TABLEAU DE BORD DES DONNEES ENVIRONNEMENTALES </h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-          </div>
-      <div class="container">
-        <h3 class="text-center">consommation d'électricité en Kwh</h3>
-        <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ANNEE</th>
-                                <th>CONSOMMATION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sec1 as $k=>$v)
-                                <tr>
-                                    <td>{{ $k }}</td>
-                                    <td>{{ $v }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <p>Ici le graphique</p>
-            </div>
-        </div>
-
-        <h3 class="text-center">consommation eau en m3</h3>
-        <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ANNEE</th>
-                                <th>CONSOMMATION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sec2 as $k=>$v)
-                                <tr>
-                                    <td>{{ $k }}</td>
-                                    <td>{{ $v }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <p>Ici le graphique</p>
-            </div>
-        </div>
-        <h3 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h3>
-        <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ANNEE</th>
-                                <th>CONSOMMATION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sec3 as $k=>$v)
-                                <tr>
-                                    <td>{{ $k }}</td>
-                                    <td>{{ $v }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <p>Ici le graphique</p>
-            </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
 
     <!-- ======= Clients Section ======= -->
     <section id="clients" class="clients">

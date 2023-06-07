@@ -47,6 +47,10 @@ class User extends Authenticatable
         return 'Y-d-m H:i:s';
     }
 
+    public function entreprise(){
+        return $this->belongsTo('App\Models\Entreprise');
+    }
+
     public function role(){
         return $this->belongsTo('App\Models\Role');
     }

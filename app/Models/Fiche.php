@@ -5,7 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Rapport extends Model
+class Fiche extends Model
 {
     //
     protected $guarded = [];
@@ -15,10 +15,6 @@ class Rapport extends Model
         return $this->belongsTo('App\Models\Entreprise');
     }
 
-    public function getFichierAttribute(){
-        $host = request()->getSchemeAndHttpHost();
-        $path = $host.'/files/'.$this->fichier_uri;
-        return $path;
-    }
+    
 
 }

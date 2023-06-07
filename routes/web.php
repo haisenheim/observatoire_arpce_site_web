@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OperateurController;
 use App\Models\Indicateur;
+use App\Models\Source;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,11 +38,21 @@ Route::get('/', function () {
             return $carry + $item->valeur;
         });
     });
+    $source = Source::find(1);
     //dd($sec1);
-	return view('Front/index')->with(compact('sec1','sec2','sec3'));
+	return view('Front/index')->with(compact('sec1','sec2','sec3','source'));
 })->middleware('active');
 
 Route::get('/data',function(){
+    $indicateurs = Indicateur::all();
+    $electricite = $indicateurs->where('type_id',1);
+    $eau = $indicateurs->where('type_id',2);
+    $ges = $indicateurs->where('type_id',3);
+    $source = Source::find(1);
+    return response()->json(['elec'=>$electricite,'eau'=>$eau,'ges'=>$ges,'source'=>$source]);
+});
+
+Route::get('/dashboard', function () {
     $indicateurs = Indicateur::all();
     $electricite = $indicateurs->where('type_id',1);
     $eau = $indicateurs->where('type_id',2);
@@ -64,11 +75,8 @@ Route::get('/data',function(){
             return $carry + $item->valeur;
         });
     });
-    return response()->json(['sec1'=>$sec1,'sec2'=>$sec2,'sec3'=>$sec3]);
-});
-
-Route::get('/about', function () {
-	return view('Front/about');
+    $source = Source::find(1);
+	return view('Front/about')->with(compact('sec1','sec2','sec3','source'));
 })->middleware('active');
 
 Route::get('/blog', function () {

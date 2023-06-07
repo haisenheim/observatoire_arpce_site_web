@@ -26,7 +26,6 @@
                     <thead>
                           <tr>
                                 <th>Indicateur</th>
-                                <th>Entreprise</th>
                                 <th>Annee</th>
                                 <th>Valeur</th>
                                 <th></th>
@@ -36,7 +35,7 @@
                         @foreach ($indicateurs as $p)
                             <tr>
                                 <td> {{ $p->type?$p->type->name:'-' }}</td>
-                                <td> {{ $p->entreprise?$p->entreprise->name:'-' }}</td>
+
                                 <td> {{ $p->annee }}</td>
                                 <td> {{ $p->valeur }} {{ $p->type?$p->type->unite:'-' }}</td>
                                 <th></th>
@@ -67,16 +66,6 @@
                     <select name="type_id" id="" required class="form-control">
                         <option value="">Indicateur ...</option>
                         @foreach ($types as $op)
-                            <option value="{{ $op->id }}">{{ $op->name }}</option>
-                        @endforeach
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-3 col-sm-12">
-                <div class="form-group">
-                    <select name="entreprise_id" id="" required class="form-control">
-                        <option value="">Entreprise ...</option>
-                        @foreach ($entreprises as $op)
                             <option value="{{ $op->id }}">{{ $op->name }}</option>
                         @endforeach
                     </select>

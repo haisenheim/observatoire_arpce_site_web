@@ -19,16 +19,16 @@ class Entreprise extends Model
         return $this->hasMany('App\Models\Rapport');
     }
 
+    public function user(){
+        return $this->hasOne('App\Models\User','entreprise_id');
+    }
+
     public function secteur()
     {
         return $this->belongsTo('App\Models\Secteur');
     }
 
-    public function getFichierAttribute(){
-        $host = request()->getSchemeAndHttpHost();
-        $path = $host.'/files/'.$this->image_uri;
-        return $path;
-    }
+
 
 
 

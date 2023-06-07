@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\ExtendedController;
 use App\Models\Agent;
+use App\Models\Entreprise;
 use App\Models\Rapport;
 use App\Models\Region;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class RapportController extends ExtendedController
+class ProfilController extends ExtendedController
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +20,9 @@ class RapportController extends ExtendedController
     public function index()
     {
         //
-        $rapports = Rapport::where('entreprise_id',auth()->user()->entreprise_id)->get();
-        return view('/Account/Rapports/index')->with(compact('rapports'));
+        //$entreprise = Entreprise::find(auth()->user()->entreprise_id);
+        $profil = User::find(auth()->user()->id);
+        return view('/Account/profil')->with(compact('profil'));
     }
 
 
@@ -46,18 +49,22 @@ class RapportController extends ExtendedController
     public function store(Request $request)
     {
        // $data = $request->except('fichier_uri');
-        $rapport = new Rapport();
-        $fichier = $request->fichier_uri;
-        $fichier->name = $request->name;
-        $rapport->fichier_uri = $this->entityDocumentCreate($fichier,'rapports',time());
-        $rapport->entreprise_id = auth()->user()->entreprise_id;
-        $rapport->user_id = auth()->user()->id;
-        $rapport->annee = $request->annee;
-        $rapport->save();
+        $data['name'] = $request->user_name;
+        $data['phone'] = $request->user_phone;
+        $data['email'] = $request->user_email;
+        if($request->password){
+            $data['password'] = bcrypt($request->password);
+        }
+        
+        User::updateOrCreate(['id'=>auth()->user()->id],$data);
+        $ent['name'] = $request->name;
+        $ent['phone'] = $request->phone;
+        $ent['email'] = $request->email;
+        Entreprise::updateOrCreate(['id'=>auth()->user()->entreprise_id],$ent);
         return back();
     }
 
-  
+
 
 
 }
