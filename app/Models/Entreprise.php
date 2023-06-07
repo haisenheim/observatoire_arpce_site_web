@@ -24,6 +24,12 @@ class Entreprise extends Model
         return $this->belongsTo('App\Models\Secteur');
     }
 
+    public function getFichierAttribute(){
+        $host = request()->getSchemeAndHttpHost();
+        $path = $host.'/files/'.$this->image_uri;
+        return $path;
+    }
+
 
 
 }

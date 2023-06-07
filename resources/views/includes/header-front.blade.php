@@ -77,8 +77,9 @@
                 </div>
             </a>
             <ul>
-                <li><a href="/profil">Profil</a></li>
-                <li><a href="/compte/rapports">Rapports</a></li>
+                <li><a href="/account/profil">Profil</a></li>
+                <li><a href="/account/rapports">Rapports</a></li>
+                <li><a href="/account/fiches">Fiches</a></li>
                 <li><a href="/logout">Se deconnecter</a></li>
             </ul>
         </li>

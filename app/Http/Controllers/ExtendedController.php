@@ -37,25 +37,25 @@ class ExtendedController extends Controller
 		$ext = $file->getClientOriginalExtension();
 		$arr_ext = $this->authExtensions();
 
-		if (!file_exists(public_path('documents'))) {
-			mkdir(public_path('documents'));
+		if (!file_exists(public_path('files'))) {
+			mkdir(public_path('files'));
 		}
 
-		if (!file_exists(public_path('documents') . '/'.$entity)) {
-			mkdir(public_path('documents') . '/'.$entity);
+		if (!file_exists(public_path('files') . '/'.$entity)) {
+			mkdir(public_path('files') . '/'.$entity);
 		}
 		if(in_array($ext,$arr_ext)) {
 			$name_with_extension = $name_without_extension . '.' . $ext;
 
-			if (file_exists(public_path('documents') . '/' . $entity . '/' . $name_with_extension)) {
-				unlink(public_path('documents') . '/' . $entity . '/' . $name_with_extension);
+			if (file_exists(public_path('files') . '/' . $entity . '/' . $name_with_extension)) {
+				unlink(public_path('files') . '/' . $entity . '/' . $name_with_extension);
 			}
 			$imageUri = $entity.'/'.$name_with_extension;
-			$file->move(public_path('documents/' . $entity), $name_with_extension);
+			$file->move(public_path('files/' . $entity), $name_with_extension);
 			return $imageUri;
 		}else{
 			//dd('ok');
-			request()->session()->flash('danger',' Impossible d\'enregistrer le fichier !!!');
+			request()->session()->flash('danger',' Impossible d\'enregistrer le fichier, le format n\'est pas correct !!!');
 		}
 
 

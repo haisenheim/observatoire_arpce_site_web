@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Account;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\ExtendedController;
 use App\Models\Agent;
+use App\Models\Rapport;
 use App\Models\Region;
 use Illuminate\Http\Request;
 
-class AgentController extends Controller
+class RapportController extends ExtendedController
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +18,8 @@ class AgentController extends Controller
     public function index()
     {
         //
-        $agents = Agent::all();
-        return view('/Admin/Agents/index')->with(compact('agents'));
+        $rapports =Rapport::get('entreprise_id',auth()->user()->entreprise_id)->get();
+        return view('/Account/Rapports/index')->with(compact('rapports'));
     }
 
 
@@ -44,8 +45,14 @@ class AgentController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Region::create($data);
+        $data = $request->except('fichier_uri');
+        $rapport = new Rapport();
+        $fichier = $request->fichier_uri;
+        $rapport->fichier_uri = $this->entityDocumentCreate($fichier,'rapports',time());
+        $rapport->entreprise_id = auth()->user()->entreprise_id;
+        $rapport->user_id = auth()->user()->id;
+        $rapport->annee = $request->annee;
+        $rapport->save();
         return back();
     }
 
