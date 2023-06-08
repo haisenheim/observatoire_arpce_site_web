@@ -63,65 +63,66 @@
 
   <main id="main">
 
-        <!-- ======= Objectifs Section ======= -->
-        <section id="about" class="about">
+    <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+      <div class="container">
 
-            <div class="container">
-              <div class="section-title">
-               <!-- <i style="font-size: 110px;" class="bi bi-list-check"></i> -->
-                <h2> Objectifs de l'Observatoire</h2>
-                <div class="pt-4 pt-lg-0 content">
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i>Collecter et analyser les données sur l'impact environnemental du numérique.</li>
-                        <li><i class="bi bi-check-circle"></i> Surveiller les progrès réalisés dans la réduction de l'empreinte carbone du secteur numérique.</li>
-                        <li><i class="bi bi-check-circle"></i> Sensibiliser les acteurs de l'écosystème numérique aux enjeux environnementaux.</li>
-                        <li><i class="bi bi-check-circle"></i> Développer des recommandations pour une transformation numérique plus durable.</li>
-                      </ul>
-                </div>
-              </div>
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="icon-box">
+              <i class="bi bi-card-checklist"></i>
+              <h3><a href="">OBJECTIF 1</a></h3>
+              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
             </div>
-          </section><!-- End Objectifs Section -->
-
-          <!-- ======= Missions Section ======= -->
-        <section id="about" class="about">
-            <div class="container">
-
-              <div class="section-title">
-                <h2>Nos missions </h2>
-                <div class="pt-4 pt-lg-0 content">
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i>Évaluer la consommation d'énergie des infrastructures numériques.</li>
-                        <li><i class="bi bi-check-circle"></i>Mesurer les émissions de gaz à effet de serre liées à la production et à l'utilisation du numérique.</li>
-                        <li><i class="bi bi-check-circle"></i>Analyser la consommation d'eau des data centers et des infrastructures de télécommunication.</li>
-                        <li><i class="bi bi-check-circle"></i>Étudier la gestion des déchets électroniques.</li>
-                        <li><i class="bi bi-check-circle"></i>Promouvoir l'utilisation des énergies renouvelables dans le secteur numérique.</li>
-                      </ul>
-                </div>
-              </div>
-
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="bi bi-bar-chart"></i>
+              <h3><a href="">OBJECTIF 2</a></h3>
+              <p>Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
             </div>
-          </section><!-- End Missions Section -->
-
-          <!-- ======= Engagements Section ======= -->
-        <section id="about" class="about">
-            <div class="container">
-
-              <div class="section-title">
-                <h2>Notre engagement </h2>
-                <div class="pt-4 pt-lg-0 content">
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i>Contribuer à la transition vers une économie numérique plus respectueuse de l'environnement.</li>
-                        <li><i class="bi bi-check-circle"></i> Fournir des informations clés pour orienter les politiques publiques et les initiatives privées.</li>
-                        <li><i class="bi bi-check-circle"></i>Encourager la collaboration et le partage des bonnes pratiques entre les acteurs de l'écosystème numérique.</li>
-                        <li><i class="bi bi-check-circle"></i> Sensibiliser le public à l'impact environnemental du numérique et à la nécessité de solutions durables.</li>
-                      </ul>
-                </div>
-              </div>
+          </div>
+          <div class="col-lg-4 mt-4 mt-lg-0">
+            <div class="icon-box">
+              <i class="bi bi-binoculars"></i>
+              <h3><a href="">OBJECTIF 3</a></h3>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
             </div>
-          </section><!-- End Engagement Section -->
+          </div>
+        </div>
 
+      </div>
+    </section><!-- End Featured Section -->
 
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
 
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{{ asset('Eterna/assets/img/about.jpg')}}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.ok
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+            </ul>
+            <p>
+              Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+              velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+              culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
 
 
     <!-- ======= Clients Section ======= -->
