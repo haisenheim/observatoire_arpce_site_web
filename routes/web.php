@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\OperateurController;
 use App\Models\Indicateur;
+use App\Models\Rapport;
 use App\Models\Source;
 use Illuminate\Support\Facades\Route;
 
@@ -80,7 +81,8 @@ Route::get('/dashboard', function () {
 })->middleware('active');
 
 Route::get('/blog', function () {
-	return view('Front/blog');
+    $rapports = Rapport::all();
+	return view('Front/blog')->with(compact('rapports'));
 })->middleware('active');
 
 Route::get('/contact', function () {

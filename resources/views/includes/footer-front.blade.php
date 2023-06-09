@@ -26,7 +26,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">ACCUEIL</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/dashboard">Donnees environnementales</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/publications">Publications</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/blog">Publications</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/login">Se connecter</a></li>
             </ul>
