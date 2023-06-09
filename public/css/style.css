@@ -31,7 +31,13 @@ legend{
     color: #000000;
     padding: 5px;
     width: auto;
+    float: none;
 }
+
+.btn-xs {
+    font-size: 12px;
+    padding: 5px;
+  }
 
 .pull-right{
     float: right;

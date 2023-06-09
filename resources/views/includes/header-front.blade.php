@@ -60,7 +60,7 @@
 
       <?php
             $active = \Illuminate\Support\Facades\Session::get('active');
-            $auth = auth()->user();
+            $auth =  auth()->user();
             ?>
 
       <nav id="navbar" class="navbar">
@@ -70,6 +70,7 @@
           <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
           <li><a class="{{ $active==4?'active':'' }}" href="/contact">CONTACT</a></li>
           @if($auth)
+          <?php $entx = \App\Models\Entreprise::find(auth()->user()->entreprise_id); ?>
         <li class="dropdown">
             <a class="">
                 <div class="text-center">
@@ -81,6 +82,9 @@
                 <li><a href="/account/profil">Profil</a></li>
                 <li><a href="/account/rapports">Rapports</a></li>
                 <li><a href="/account/fiches">Fiches</a></li>
+                @if($entx->secteur_id == 3)
+                <li><a href="/account/datacenters">Centres de donnees</a></li>
+                @endif
                 <li><a href="/logout">Se deconnecter</a></li>
             </ul>
         </li>

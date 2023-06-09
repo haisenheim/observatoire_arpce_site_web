@@ -63,24 +63,47 @@
 
   <main id="main">
 
-        <!-- ======= Objectifs Section ======= -->
-        <section id="about" class="about">
-
-            <div class="container">
-              <div class="section-title">
-               <!-- <i style="font-size: 110px;" class="bi bi-list-check"></i> -->
-                <h2> Objectifs de l'Observatoire</h2>
-                <div class="pt-4 pt-lg-0 content">
-                    <ul>
-                        <li><i class="bi bi-check-circle"></i>Collecter et analyser les données sur l'impact environnemental du numérique.</li>
-                        <li><i class="bi bi-check-circle"></i> Surveiller les progrès réalisés dans la réduction de l'empreinte carbone du secteur numérique.</li>
-                        <li><i class="bi bi-check-circle"></i> Sensibiliser les acteurs de l'écosystème numérique aux enjeux environnementaux.</li>
-                        <li><i class="bi bi-check-circle"></i> Développer des recommandations pour une transformation numérique plus durable.</li>
-                      </ul>
-                </div>
+            <!-- ======= Featured Section ======= -->
+    <section id="featured" class="featured">
+        <div class="container">
+            <div class="section-title">
+                <!-- <i style="font-size: 110px;" class="bi bi-list-check"></i> -->
+                 <h2> Objectifs de l'Observatoire</h2>
+            </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="icon-box">
+                <i class="bi bi-search"></i>
+                <h3><a href="">COLLECTE</a></h3>
+                <p>Collecter et analyser les données sur l'impact environnemental du numérique.</p>
               </div>
             </div>
-          </section><!-- End Objectifs Section -->
+            <div class="col-lg-3 mt-4 mt-lg-0">
+              <div class="icon-box">
+                <i class="bi bi-binoculars"></i>
+                <h3><a href="">MONITORING</a></h3>
+                <p>Surveiller les progrès réalisés dans la réduction de l'empreinte carbone du secteur numérique.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 mt-4 mt-lg-0">
+              <div class="icon-box">
+                <i class="bi bi-soundwave"></i>
+                <h3><a href="">SENSIBILISATION</a></h3>
+                <p>Sensibiliser les acteurs de l'écosystème numérique aux enjeux environnementaux.</p>
+              </div>
+            </div>
+            <div class="col-lg-3 mt-4 mt-lg-0">
+                <div class="icon-box">
+                  <i class="bi bi-graph-up"></i>
+                  <h3><a href="">DEVELOPPEMENT</a></h3>
+                  <p>Développer des recommandations pour une transformation numérique plus durable.</p>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </section><!-- End Featured Section -->
+
 
           <!-- ======= Missions Section ======= -->
         <section id="about" class="about">

@@ -22,18 +22,18 @@
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>MENU</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">ACCUEIL</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/dashboard">Donnees environnementales</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/publications">Publications</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/login">Se connecter</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>LIENS UTILES</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
@@ -44,7 +44,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+            <h4>Contactez nous</h4>
             <p>
               A108 Adam Street <br>
               New York, NY 535022<br>
@@ -56,7 +56,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
-            <h3>About Eterna</h3>
+            <h3>A PROPOS DE L'OND</h3>
             <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
             <div class="social-links mt-3">
               <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>

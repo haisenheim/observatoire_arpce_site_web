@@ -101,6 +101,8 @@ Route::prefix('admin')
         Route::get('/dashboard','DashboardController@index');
         Route::resource('entreprises', 'EntrepriseController');
         Route::resource('articles', 'ArticleController');
+        Route::get('communes', 'CommuneController@index');
+        Route::post('communes', 'CommuneController@store');
         Route::get('indicateurs', 'IndicateurController@index');
         Route::post('indicateurs', 'IndicateurController@store');
         Route::get('params', 'ParamController@index');
@@ -123,6 +125,8 @@ Route::prefix('account')
     ->group(function(){
         Route::resource('rapports', 'RapportController');
         Route::resource('fiches', 'FicheController');
+        Route::post('/fiche/datacenter','FicheController@addDatacenter');
+        Route::resource('datacenters', 'DatacenterController');
         Route::get('/profil','ProfilController@index');
         Route::post('/profil','ProfilController@store');
         Route::resource('articles', 'ArticleController');

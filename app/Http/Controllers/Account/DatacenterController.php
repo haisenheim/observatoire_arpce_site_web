@@ -3,12 +3,11 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\ExtendedController;
-use App\Models\Agent;
-use App\Models\Rapport;
-use App\Models\Region;
+use App\Models\Commune;
+use App\Models\Datacenter;
 use Illuminate\Http\Request;
 
-class RapportController extends ExtendedController
+class DatacenterController extends ExtendedController
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,9 @@ class RapportController extends ExtendedController
     public function index()
     {
         //
-        $rapports = Rapport::where('entreprise_id',auth()->user()->entreprise_id)->get();
-        return view('/Account/Rapports/index')->with(compact('rapports'));
+        $centres = Datacenter::where('entreprise_id',auth()->user()->entreprise_id)->get();
+        $communes = Commune::all();
+        return view('/Account/Datacenters/index')->with(compact('centres','communes'));
     }
 
 
@@ -45,14 +45,11 @@ class RapportController extends ExtendedController
      */
     public function store(Request $request)
     {
-        $rapport = new Rapport();
-        $fichier = $request->fichier_uri;
-        $rapport->name = $request->name;
-        $rapport->fichier_uri = $this->entityDocumentCreate($fichier,'rapports',time());
-        $rapport->entreprise_id = auth()->user()->entreprise_id;
-        $rapport->user_id = auth()->user()->id;
-        $rapport->annee = $request->annee;
-        $rapport->save();
+
+        $data = $request->except('_token');
+        $data['entreprise_id'] = auth()->user()->entreprise_id;
+        $data['token'] = sha1(time());
+        Datacenter::updateOrCreate($data);
         return back();
     }
 

@@ -29,8 +29,28 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div style="width: 500px; margin:5px auto;"><canvas id="elec"></canvas></div>
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec1 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td style="text-align: right">{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div style="width: 500px;"><canvas id="elec"></canvas></div>
             </div>
         </div>
         <hr/>
@@ -38,8 +58,28 @@
             <h5 class="text-center">Consommation eau en m3</h5>
         </div>
         <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div style="width: 500px; margin:5px auto;"><canvas id="eau"></canvas></div>
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec2 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td style="text-align: right">{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div style="width: 500px;"><canvas id="eau"></canvas></div>
             </div>
         </div>
         <hr/>
@@ -47,8 +87,28 @@
             <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
         </div>
         <div class="row">
-            <div class="col-md-12 col-sm-12">
-                <div style="width: 500px; margin:5px auto;"><canvas id="ges"></canvas></div>
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>ANNEE</th>
+                                <th>CONSOMMATION</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($sec3 as $k=>$v)
+                                <tr>
+                                    <td>{{ $k }}</td>
+                                    <td style="text-align: right">{{ $v }}</td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
+                <div style="width: 500px;"><canvas id="ges"></canvas></div>
             </div>
         </div>
 
@@ -57,7 +117,33 @@
             <h5 class="text-center">Repartition des sources d'energie</h5>
         </div>
         <div class="row">
-            <div class="col-md-12 col-sm-12">
+            <div class="col-md-5 col-sm-12">
+                <div>
+                    <table class="table table-sm table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>SOURCE</th>
+                                <th>POURCENTAGE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>E2C</td>
+                                <td style="text-align: right">{{ $source->e2c }}%</td>
+                            </tr>
+                            <tr>
+                                <td>Groupe electrogene</td>
+                                <td style="text-align: right">{{ $source->ge }}%</td>
+                            </tr>
+                            <tr>
+                                <td>Renouvelable</td>
+                                <td style="text-align: right">{{ $source->er }}%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-12">
                 <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
             </div>
         </div>

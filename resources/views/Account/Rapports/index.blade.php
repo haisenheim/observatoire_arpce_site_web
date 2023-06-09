@@ -4,35 +4,51 @@
 @section('content')
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<main id="main">
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+              <ol>
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li>Rapports</li>
+              </ol>
+              <h2>Rapports</h2>
+
+            </div>
+          </section><!-- End Breadcrumbs -->
 
   <div style="max-height:300px; overflow: scroll;" class="">
-        <div class="card card-light">
-            <div class="card-body">
-                <div class="card-header">
-                    <div class="pull-right"><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter une entreprise"></i></button></div>
-                </div>
-                <table class="table table-bordered table-sm table-hover data-table">
-                    <thead>
-                          <tr>
-                                <th>ANNEE</th>
-                                <th>INTITULE</th>
-                                <th></th>
-                            </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($rapports as $p)
-                            <tr>
-                                <td>{{ $p->annee }}</td>
-                                <td><a href="{{ $p->fichier }}"> {{ $p->name }} </a></td>
-
-                                <td></td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+    <div class="">
+        <div class="p-3">
+            <div class="m-2">
+                <div class=""><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter un rapport"></i> Ajouter un rapport</button></div>
             </div>
+            <table class="table table-bordered table-sm table-hover data-table">
+                <thead>
+                      <tr>
+                            <th>ANNEE</th>
+                            <th>INTITULE</th>
+                            <th></th>
+                        </tr>
+                </thead>
+                <tbody>
+                    @foreach ($rapports as $p)
+                        <tr>
+                            <td>{{ $p->annee }}</td>
+                            <td><a href="{{ $p->fichier }}"> {{ $p->name }} </a></td>
+
+                            <td></td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
-  </div>
+    </div>
+</div>
+
+</main>
+
 @endsection
 
 @section('modal')

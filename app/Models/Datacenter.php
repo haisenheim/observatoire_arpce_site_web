@@ -5,19 +5,20 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Fiche extends Model
+class Datacenter extends Model
 {
     //
     protected $guarded = [];
+    protected $dates = ['start'];
 
     public function entreprise()
     {
         return $this->belongsTo('App\Models\Entreprise');
     }
 
-    public function datafiches(){
-        return $this->hasMany('App\Models\DatacenterFiche','fiche_id');
+    public function commune()
+    {
+        return $this->belongsTo('App\Models\Commune');
     }
-
 
 }

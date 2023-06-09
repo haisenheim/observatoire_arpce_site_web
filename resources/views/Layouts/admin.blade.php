@@ -125,15 +125,9 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/about" class="nav-link">
+                <a href="/admin/communes" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>PAGE APROPOS</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/admin/categories" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>CAT. DE PUBLICATIONS</p>
+                  <p>COMMUNES</p>
                 </a>
               </li>
             </ul>
