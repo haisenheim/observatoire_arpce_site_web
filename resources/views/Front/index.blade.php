@@ -153,7 +153,9 @@
 
         <div class="section-title">
           <h2>ENTREPRISES PARTENAIRES</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Découvrez nos précieux partenaires du secteur numérique qui collaborent activement avec
+            l'Observatoire du Numérique Soutenable pour promouvoir des pratiques durables et
+            contribuer à la préservation de l'environnement. </p>
         </div>
 
         <div class="clients-slider swiper">

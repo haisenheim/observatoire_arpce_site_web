@@ -22,7 +22,7 @@
         <div class="">
             @foreach ($rapports as $rapport)
                 <div style="width: 100%; padding:10px;">
-                    <div style="display:flex; justify-content: start;background-color: #ededed;">
+                    <div style="display:flex; justify-content: start;background-color: #ededed; border-radius: 5px;">
                         <div style="width: 120px">
                             <img width="100" style="background: #fff" src="{{ $rapport->entreprise->photo }}" alt="">
                         </div>

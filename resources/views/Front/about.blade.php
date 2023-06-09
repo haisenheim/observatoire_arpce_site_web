@@ -20,7 +20,8 @@
     <section id="services" class="services">
         <div class="section-title">
             <h2>TABLEAU DE BORD DES DONNEES ENVIRONNEMENTALES </h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Explorez notre tableau de bord vous permettra de visualiser et d'analyser l’évolution
+                l'impact environnemental du secteur numérique au Congo à travers des indicateurs clés.</p>
           </div>
       <div class="container">
         <hr/>
@@ -58,7 +59,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-sm-12">
-                <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
+                <div class="text-center" style="width: 320px; margin:5px auto"><canvas id="source"></canvas></div>
             </div>
         </div>
 
@@ -73,7 +74,9 @@
 
         <div class="section-title">
           <h2>ENTREPRISES PARTENAIRES</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Découvrez nos précieux partenaires du secteur numérique qui collaborent activement avec
+            l'Observatoire du Numérique Soutenable pour promouvoir des pratiques durables et
+            contribuer à la préservation de l'environnement. </p>
         </div>
 
         <div class="clients-slider swiper">
@@ -112,6 +115,7 @@
                 lab3 = arr3.map((el)=>el[1].annee)
                 dat3 = arr3.map((el)=>el[1].valeur);
                 dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
+                lab4 = ['E2C - '+secs.source.e2c+'%','GE - '+secs.source.ge+'%','RENOUVELABLE - '+secs.source.er+'%']
                 console.log(dat4);
 
                // var l1 = Object.keys(secs.sec1);
@@ -206,15 +210,16 @@
                         animation: false,
                         plugins: {
                         legend: {
-                            display: false
+                            display: true,
+                            position:'top',
                         },
                         tooltip: {
-                            enabled: false
+                            enabled: true
                         }
                         }
                     },
                     data: {
-                        //labels: lab3,
+                        labels: lab4,
                         datasets: [
                         {
                             label: 'Repartition',

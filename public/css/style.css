@@ -34,6 +34,10 @@ legend{
     float: none;
 }
 
+.breadcrumbs{
+    padding-top: 90px;
+}
+
 .btn-xs {
     font-size: 12px;
     padding: 5px;
