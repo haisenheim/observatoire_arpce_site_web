@@ -118,6 +118,7 @@ Route::prefix('admin')
         Route::resource('articles', 'ArticleController');
         Route::post('article/tag', 'ArticleController@addTag');
         Route::post('article/update', 'ArticleController@save');
+        Route::get('fiches/{token}', 'DashboardController@showFiche');
         Route::get('article/enable/{id}', 'ArticleController@enable');
         Route::get('article/disable/{id}', 'ArticleController@disable');
         Route::get('communes', 'CommuneController@index');

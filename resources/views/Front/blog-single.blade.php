@@ -58,8 +58,13 @@
                     @foreach ($article->tags as $tag)
                     <li><a href="#">{{ $tag->name }}</a></li>
                     @endforeach
-
                 </ul>
+                <hr>
+                <p>
+                    @if ($article->fichier_uri)
+                        <a href="{{ $article->fichier }}"><i class="bi bi-download"></i> Telechargement</a>
+                    @endif
+                </p>
               </div>
 
             </article><!-- End blog entry -->

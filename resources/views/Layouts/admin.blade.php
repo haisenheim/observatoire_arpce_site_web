@@ -66,7 +66,7 @@
             <a href="/admin/dashboard" class="nav-link {{ $active==1?'active':'' }}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Tableau de bord
+                DONNEES COLLECTEES
               </p>
             </a>
           </li>
@@ -104,7 +104,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link {{ $active==7?'active':'' }}">
               <i class="nav-icon fas fa-cog"></i>
               <p>
                 PARAMETRES
@@ -140,7 +140,7 @@
           </li>
           <li class="nav-header"></li>
           <li class="nav-item">
-            <a style="font-style:italic" href="/admin/users" class="nav-link nav-light">
+            <a style="font-style:italic" href="/admin/users" class="nav-link nav-light {{ $active==6?'active':'' }}">
               <i class="nav-icon fas fa-ellipsis-h"></i>
               <p>Comptes utilisateur</p>
             </a>

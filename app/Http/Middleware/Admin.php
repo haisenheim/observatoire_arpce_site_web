@@ -27,51 +27,27 @@ class Admin
 	    if(in_array('dashboard',$path)){
 		    Session::put('active', 1);
 	    }
-	    if(in_array('ventes',$path)){
+	    if(in_array('entreprises',$path)){
 		    Session::put('active', 2);
 	    }
 
-        if(in_array('fournisseurs',$path)){
-		    Session::put('active', 21);
-	    }
-
-        if(in_array('clients',$path)){
+        if(in_array('rapports',$path)){
 		    Session::put('active', 3);
 	    }
-	    if(in_array('articles',$path)){
+
+        if(in_array('indicateurs',$path)){
 		    Session::put('active', 4);
 	    }
-        if(in_array('fidelite',$path)){
+	    if(in_array('articles',$path)){
 		    Session::put('active', 5);
 	    }
-	    if(in_array('litiges',$path)){
+        if(in_array('user',$path)){
 		    Session::put('active', 6);
 	    }
-        if(in_array('rapports',$path)){
+	    if(in_array('communes',$path)||in_array('tags',$path)||in_array('categories',$path)||in_array('params',$path)){
 		    Session::put('active', 7);
 	    }
-	    if(in_array('compte',$path)){
-		    Session::put('active', 8);
-	    }
 
-        if(in_array('applications',$path)){
-		    Session::put('active', 9);
-	    }
-	    if(in_array('factures',$path)){
-		    Session::put('active', 10);
-	    }
-        if(in_array('terminal',$path)){
-		    Session::put('active', 11);
-	    }
-	    if(in_array('employes',$path)){
-		    Session::put('active', 12);
-	    }
-        if(in_array('comptabilite',$path)){
-		    Session::put('active', 13);
-	    }
-	    if(in_array('boutique',$path)){
-		    Session::put('active', 11);
-	    }
 
         return $next($request);
     }
