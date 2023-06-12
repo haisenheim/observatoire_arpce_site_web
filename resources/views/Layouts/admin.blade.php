@@ -119,9 +119,15 @@
                     </a>
                   </li>
               <li class="nav-item">
-                <a href="/admin/slides" class="nav-link">
+                <a href="/admin/categories" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>SLIDES</p>
+                  <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="/admin/tags" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Mots clefs</p>
                 </a>
               </li>
               <li class="nav-item">

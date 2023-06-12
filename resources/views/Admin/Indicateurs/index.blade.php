@@ -12,38 +12,41 @@
         <li class="breadcrumb-item active">Indicateurs</li>
       </ol>
     </div><!-- /.col -->
-  </div><!-- /.row -->
+  </div><!-- /.row #3d9970 -->
 @endsection
 
 @section('content')
   <div class="">
         <div class="card card-light">
             <div class="card-body">
-                <div class="card-header">
-                    <div class="pull-right"><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter une entreprise"></i></button></div>
+                <div class="">
+                    <div class=""><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter un indicateur"></i> Ajouter un indicateur</button></div>
                 </div>
-                <table class="table table-bordered table-sm table-hover data-table">
-                    <thead>
-                          <tr>
-                                <th>Indicateur</th>
-                                <th>Annee</th>
-                                <th>Valeur</th>
-                                <th></th>
-                            </tr>
-                    </thead>
-                    <tbody>
-                        @foreach ($indicateurs as $p)
-                            <tr>
-                                <td> {{ $p->type?$p->type->name:'-' }}</td>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-sm table-hover data-table">
+                        <thead>
+                              <tr>
+                                    <th>Indicateur</th>
+                                    <th>Annee</th>
+                                    <th>Valeur</th>
+                                    <th></th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($indicateurs as $p)
+                                <tr>
+                                    <td> {{ $p->type?$p->type->name:'-' }}</td>
 
-                                <td> {{ $p->annee }}</td>
-                                <td> {{ $p->valeur }} {{ $p->type?$p->type->unite:'-' }}</td>
-                                <th></th>
+                                    <td> {{ $p->annee }}</td>
+                                    <td> {{ $p->valeur }} {{ $p->type?$p->type->unite:'-' }}</td>
+                                    <th></th>
 
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
   </div>

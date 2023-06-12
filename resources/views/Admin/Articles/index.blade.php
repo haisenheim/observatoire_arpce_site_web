@@ -20,7 +20,7 @@
         <div class="card card-light">
             <div class="card-body">
                 <div class="card-header">
-                    <div class="pull-right"><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter une entreprise"></i></button></div>
+                    <div class="pull-right"><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter une publication"></i> Ajouter</button></div>
                 </div>
                 <table class="table table-bordered table-sm table-hover data-table">
                     <thead>
@@ -36,10 +36,16 @@
                         @foreach ($articles as $p)
                             <tr>
                                 <td>{{ date_format($p->created_at,'d/m/Y H:i') }}</td>
-                                <td><a href="/admin/articles/{{$p->id}}"></a> {{ $p->name }}</td>
+                                <td><a href="/admin/articles/{{$p->id}}"> {{ $p->name }}</a></td>
                                 <td>{{ $p->category?$p->category->name:'-' }}</td>
                                 <td><span class="badge badge-{{ $p->status['color'] }}">{{ $p->status['name'] }}</span></td>
-                                <td></td>
+                                <td>
+                                    @if ($p->active)
+                                        <span><a class="btn btn-xs btn-danger" href="/admin/article/disable/{{ $p->id }}">suspendre</a></span>
+                                    @else
+                                        <span><a class="btn btn-xs btn-warning" href="/admin/article/enable/{{ $p->id }}">publier</a></span>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
@@ -49,7 +55,7 @@
   </div>
 
   <div class="modal fade" id="addFournisseur">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">NOUVELLE PUBLICATION</h4>
@@ -73,7 +79,7 @@
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="form-group">
-                    <select name="secteur_id" id="" required class="form-control">
+                    <select name="category_id" id="" required class="form-control">
                         <option value="">Categorie ...</option>
                         @foreach ($categories as $op)
                             <option value="{{ $op->id }}">{{ $op->name }}</option>
@@ -89,7 +95,8 @@
             </div>
             <div class="col-md-12 col-sm-12">
                 <div class="form-group">
-                    <input type="text" name="youtube_uri" placeholder="Lien de la video youtube" class="form-control">
+                    <label for="">FICHIER EN TELECHARGEMENT</label>
+                    <input type="file" name="fichier_uri" placeholder="Fichier" class="form-control">
                 </div>
             </div>
           </div>

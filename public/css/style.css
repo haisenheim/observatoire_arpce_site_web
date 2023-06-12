@@ -34,6 +34,21 @@ legend{
     float: none;
 }
 
+.page-link:hover {
+    color: #3d9970;
+  }
+
+  .page-link{
+    color: #3d9970;
+  }
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #3d9970;
+    border-color: #3d9970;
+  }
+
 .breadcrumbs{
     padding-top: 90px;
 }

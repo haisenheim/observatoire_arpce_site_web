@@ -1,9 +1,12 @@
 <?php
 
 use App\Http\Controllers\OperateurController;
+use App\Models\Article;
+use App\Models\Category;
 use App\Models\Indicateur;
 use App\Models\Rapport;
 use App\Models\Source;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,7 +85,17 @@ Route::get('/dashboard', function () {
 
 Route::get('/blog', function () {
     $rapports = Rapport::all();
-	return view('Front/blog')->with(compact('rapports'));
+    $categories = Category::all();
+    $articles = Article::where('active',1)->paginate(1);
+    $tags = Tag::all();
+	return view('Front/blog')->with(compact('rapports','tags','categories','articles'));
+})->middleware('active');
+
+Route::get('/article/{token}', function ($token) {
+    $article = Article::where('token',$token)->first();
+    $tags = Tag::all();
+    $categories = Category::all();
+	return view('Front/blog-single')->with(compact('article','tags','categories'));
 })->middleware('active');
 
 Route::get('/contact', function () {
@@ -103,14 +116,21 @@ Route::prefix('admin')
         Route::get('/dashboard','DashboardController@index');
         Route::resource('entreprises', 'EntrepriseController');
         Route::resource('articles', 'ArticleController');
+        Route::post('article/tag', 'ArticleController@addTag');
+        Route::post('article/update', 'ArticleController@save');
+        Route::get('article/enable/{id}', 'ArticleController@enable');
+        Route::get('article/disable/{id}', 'ArticleController@disable');
         Route::get('communes', 'CommuneController@index');
         Route::post('communes', 'CommuneController@store');
         Route::get('indicateurs', 'IndicateurController@index');
         Route::post('indicateurs', 'IndicateurController@store');
         Route::get('params', 'ParamController@index');
         Route::post('params', 'ParamController@store');
+        Route::get('rapports', 'RapportController@index');
         Route::get('categories', 'CategoryController@index');
         Route::post('categories', 'CategoryController@store');
+        Route::get('tags', 'TagController@index');
+        Route::post('tags', 'TagController@store');
         Route::resource('slides', 'SlideController');
         Route::resource('blog', 'BlogController');
         Route::resource('about', 'AboutController');

@@ -2,17 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Exports\PointExport;
 use App\Http\Controllers\Controller;
-use App\Models\Annee;
 use App\Models\Entreprise;
-use App\Models\Exploitant;
 use App\Models\Indicateur;
-use App\Models\Parcelle;
-use App\Models\Region;
 use App\Models\Tindicateur;
 use Illuminate\Http\Request;
-use Maatwebsite\Excel\Facades\Excel;
 
 class IndicateurController extends Controller
 {
@@ -26,7 +20,6 @@ class IndicateurController extends Controller
         //
         $indicateurs = Indicateur::all();
         $entreprises = Entreprise::all();
-        //$annees = Annee::all();
         $types = Tindicateur::all();
         return view('/Admin/Indicateurs/index')->with(compact('indicateurs','types','entreprises'));
     }
@@ -52,7 +45,14 @@ class IndicateurController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        Indicateur::create($data);
+        $indicateur = Indicateur::where('annee',$request->annee)
+                        ->where('type_id',$request->type_id)->first();
+        if($indicateur){
+            $indicateur->valeur = $request->valeur;
+            $indicateur->save();
+        }else{
+            Indicateur::create($data);
+        }
         return back();
     }
 
@@ -64,8 +64,7 @@ class IndicateurController extends Controller
      */
 	public function show($id)
 	{
-		$exploitant = Exploitant::find($id);
-		return view('/Admin/Exploitants/show')->with(compact('exploitant'));
+
 	}
 
 
