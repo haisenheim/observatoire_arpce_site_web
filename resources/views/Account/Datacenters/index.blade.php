@@ -5,11 +5,23 @@
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-  <div class="p-4">
-        <div class="card card-light">
-            <div class="card-body">
+  <div id="main" class="scrolled-offset">
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+          <ol>
+            <li><a href="/">ACCUEIL</a></li>
+            <li>DATACENTERS</li>
+          </ol>
+          <h2>CENTRES DE DONNEES</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
+    <div class="p-4">
+        <div class="">
+            <div class="">
                 <div class="m-2">
-                    <div class=""><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter une entreprise"></i></button></div>
+                    <div class=""><button data-target="#addFournisseur" data-toggle="modal" class="btn btn-xs btn-success"><i class="fa fa-plus-circle" title="Ajouter un datacenter"></i> Ajouter</button></div>
                 </div>
                 <div class="table-responsive mt-5">
                     <table class="table table-bordered table-sm table-hover data-table">
@@ -39,6 +51,7 @@
                 </div>
             </div>
         </div>
+  </div>
   </div>
 @endsection
 

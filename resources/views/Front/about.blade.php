@@ -2,7 +2,7 @@
 
 @section('content')
 <script src="{{ asset('js/chart.min.js') }}"></script>
-<main id="main">
+<main id="main" class="scrolled-offset">
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">

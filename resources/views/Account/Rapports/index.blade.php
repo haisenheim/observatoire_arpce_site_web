@@ -4,13 +4,13 @@
 @section('content')
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<main id="main">
+<main id="main" class="scrolled-offset">
         <!-- ======= Breadcrumbs ======= -->
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
 
               <ol>
-                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="/">ACCUEIL</a></li>
                 <li>Rapports</li>
               </ol>
               <h2>Rapports</h2>
