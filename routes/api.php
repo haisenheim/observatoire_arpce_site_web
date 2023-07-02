@@ -32,7 +32,7 @@ Route::get('/data',function(){
 
 Route::get('/',function(){
     return response()->json('Hello');
-})->middleware('allow-cors');
+});
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('login', 'login');
