@@ -18,14 +18,18 @@ class AllowCors
     {
         $allowedOrigins = ['localhost:8081', '127.0.0.0:8081','127.0.0.0:8000' ,'http://127.0.0.0:8081'];
         $origin = $_SERVER['HTTP_ORIGIN'];
+        return $next($request)
+        ->header('Access-Control-Allow-Origin', '*')
+        ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
+        ->header('Access-Control-Allow-Headers', 'Content-Type');
 
-        if (in_array($origin, $allowedOrigins)) {
+       /* if (in_array($origin, $allowedOrigins)) {
             return $next($request)
-                ->header('Access-Control-Allow-Origin', $origin)
+                ->header('Access-Control-Allow-Origin', '*')
                 ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
                 ->header('Access-Control-Allow-Headers', 'Content-Type');
         }
 
-        return $next($request);
+        return $next($request); */
     }
 }
