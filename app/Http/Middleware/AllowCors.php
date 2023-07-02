@@ -16,8 +16,8 @@ class AllowCors
      */
     public function handle($request, Closure $next)
     {
-        $allowedOrigins = ['localhost:8081', '127.0.0.0:8081','127.0.0.0:8000' ,'http://127.0.0.0:8081'];
-        $origin = $_SERVER['HTTP_ORIGIN'];
+        //$allowedOrigins = ['localhost:8081', '127.0.0.0:8081','127.0.0.0:8000' ,'http://127.0.0.0:8081'];
+        //$origin = $_SERVER['HTTP_ORIGIN'];
         return $next($request)
         ->header('Access-Control-Allow-Origin', '*')
         ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE')
