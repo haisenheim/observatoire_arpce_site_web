@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>OND |Observatoire du Numerique Durable</title>
+  <title>ARCPE |Observatoire du Numerique Soutenable</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -68,7 +68,7 @@
           <li><a class="{{ $active==1?'active':'' }}" href="/">Accueil</a></li>
           <li><a class="{{ $active==2?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a></li>
           <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
-         
+
           @if($auth)
           <?php $entx = \App\Models\Entreprise::find(auth()->user()->entreprise_id); ?>
         <li class="dropdown">

@@ -41,6 +41,14 @@ Route::controller(AuthController::class)->group(function () {
     Route::post('refresh', 'refresh');
 
 });
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('/auth/signin', 'login');
+    Route::post('/auth/register', 'register');
+    Route::post('/auth/logout', 'logout');
+    Route::post('/auth/refresh', 'refresh');
+
+});
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     $user = $request->user();
     $entreprise = Entreprise::find($user->entreprise_id);
