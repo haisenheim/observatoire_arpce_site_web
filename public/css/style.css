@@ -12,7 +12,7 @@
     display: block;
     width: 50px;
     height: 3px;
-    background: #3d9970;
+    background: #b73f32;
     bottom: 0;
     left: calc(50% - 25px);
   }
@@ -35,18 +35,18 @@ legend{
 }
 
 .page-link:hover {
-    color: #3d9970;
+    color: #b73f32;
   }
 
   .page-link{
-    color: #3d9970;
+    color: #b73f32;
   }
 
 .page-item.active .page-link {
     z-index: 3;
     color: #fff;
-    background-color: #3d9970;
-    border-color: #3d9970;
+    background-color: #b73f32;
+    border-color: #b73f32;
   }
 
 

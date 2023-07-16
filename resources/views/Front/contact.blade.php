@@ -40,7 +40,7 @@
           <div class="col-lg-3 col-md-6">
             <div class="info-box  mb-4">
               <i class="bx bx-phone-call"></i>
-              <h3>Appelez nous au</h3>
+              <h3>Appelez nous</h3>
               <p>+242 05 510 72 72</p>
             </div>
           </div>
