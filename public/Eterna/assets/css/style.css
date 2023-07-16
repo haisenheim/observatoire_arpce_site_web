@@ -2053,7 +2053,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #404040;
+  background: #769C38;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
@@ -2107,8 +2107,8 @@ section {
 }
 
 #footer .footer-top {
-  background: #769C38;
-  border-top: 1px solid #769C38;
+  background: #5B5E65;
+  border-top: 1px solid #5B5E65;
   border-bottom: 1px solid #769C38;
   padding: 60px 0 30px 0;
 }

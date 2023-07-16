@@ -1,12 +1,14 @@
 <?php
 
 use App\Http\Controllers\OperateurController;
+use App\Mail\SendEmail;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Indicateur;
 use App\Models\Rapport;
 use App\Models\Source;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -101,6 +103,26 @@ Route::get('/article/{token}', function ($token) {
 Route::get('/contact', function () {
 	return view('Front/contact');
 })->middleware('active');
+
+
+Route::post('send-email', function(){
+    $mailData = [
+        "name" => "Test NAME",
+        "dob" => "12/12/1990"
+    ];
+    $data = [
+        'name'=>request()->name,
+        'email'=>request()->email,
+        'message'=>request()->message,
+        'subject'=>request()->subject,
+    ];
+
+    Mail::to("clementessomba@gmail.com")->send(new SendEmail($data));
+
+    //dd("Mail Sent Successfully!");
+    request()->session()->flash('success','Message envoye avec succes');
+
+});
 
 
 
