@@ -1,33 +1,52 @@
  <!-- ======= Footer ======= -->
  <footer id="footer">
 
-      <div class="footer-top">
+
+
+    <div class="footer-top">
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-md-6 footer-links">
+
+          <div class="col-lg-3 col-md-6 footer-links">
             <h4>MENU</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">ACCUEIL</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/dashboard">Donnees environnementales</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/blog">Publications</a></li>
-
-              <li><i class="bx bx-chevron-right"></i> <a href="/login">Se connecter</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
             </ul>
           </div>
 
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>LIENS UTILES</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://arpce.cg/">ARPCE</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.congotelecom.cg/">CONGO TELECOM</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://postetelecom.gouv.cg/">Ministere des Postes et Telecoms</a></li>
 
-          <div class="col-lg-6 col-md-6 footer-contact">
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contactez nous</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+                91 bis Avenue de l'Amitié - Centre ville Brazzaville<br><br>
+              <strong>Tel:</strong> +242 05 510 72 72<br>
+              <strong>Email:</strong> contact@arpce.cg<br>
             </p>
 
           </div>
 
+          <div class="col-lg-3 col-md-6 footer-info">
+            <h3>A PROPOS DE L'Observatoire</h3>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <div class="social-links mt-3">
+              <a href="https://twitter.com/ARPCECongo" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://facebook.com/arpce" class="facebook"><i class="bx bxl-facebook"></i></a>
+
+              <a href="https://linkedin.com/company/arpce-congo" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -35,14 +54,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Observatoire du Numerique Durable</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/ -->
-        Designed by <a href="#">ALLIAGES TECHNOLOGIES</a>
+        &copy; Copyright <strong><span>Observatoire du Numerique Soutenable</span></strong>. All Rights Reserved
       </div>
     </div>
   </footer><!-- End Footer -->
