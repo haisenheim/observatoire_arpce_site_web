@@ -75,8 +75,7 @@
         <li class="dropdown">
             <a class="">
                 <div class="text-center">
-                    <i style="font-size:25px;" class="bi bi-person"></i>
-                    <p><small>{{ $auth->name }}</small><i class="bi bi-chevron-down"></i></p>
+                    <i style="font-size:25px;" class="bi bi-person"></i><i class="bi bi-chevron-down"></i>
                 </div>
             </a>
             <ul>
