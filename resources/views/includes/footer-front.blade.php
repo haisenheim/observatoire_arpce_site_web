@@ -21,7 +21,6 @@
             <h4>LIENS UTILES</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="https://arpce.cg/">ARPCE</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="https://www.congotelecom.cg/">CONGO TELECOM</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://postetelecom.gouv.cg/">Ministere des Postes et Telecoms</a></li>
 
             </ul>
@@ -39,7 +38,7 @@
 
           <div class="col-lg-3 col-md-6 footer-info">
             <h3>A PROPOS DE L'Observatoire</h3>
-            <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
+            <p>Notre observatoire est une initiative ambitieuse lancée par l'Agence de Régulation des Postes et Communications Électroniques (ARPCE) dans le but de mieux comprendre les impacts environnementaux du développement du numérique au Congo et de promouvoir des solutions durables..</p>
             <div class="social-links mt-3">
               <a href="https://twitter.com/ARPCECongo" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="https://facebook.com/arpce" class="facebook"><i class="bx bxl-facebook"></i></a>
