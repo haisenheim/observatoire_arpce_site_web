@@ -41,10 +41,10 @@
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+242 05 510 72 72</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
-        <a href="https://linkedin.com/company/arpce-congo" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="https://twitter.com/ARPCECongo" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="https://facebook.com/arpce" class="facebook"><i class="bi bi-facebook"></i></a>
 
-        <a href="https://twitter.com/ARPCECongo" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="https://linkedin.com/company/arpce-congo" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
     </div>
   </section>
@@ -56,7 +56,7 @@
       <div class="logo">
        <!-- <h1><a href="/">Eterna</a></h1> -->
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href='#'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
+        <a href='/'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
       </div>
 
       <?php
