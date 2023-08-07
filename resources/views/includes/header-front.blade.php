@@ -35,11 +35,9 @@
 
       <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
-    
+
     <div class="container d-flex justify-content-center justify-content-md-between">
-        <div style="align-self: center;background: #b73f32; padding:5px 10px;" >
-            <h5 class="text-white mb-0" style="font-weight: 800; font-size: 15px">OBSERVATOIRE DU NUMERIQUE SOUTENABLE</h5>
-        </div>
+
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@arpce.cg">contact@arpce.cg</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+242 05 510 72 72</span></i>
@@ -64,7 +62,10 @@
                      <a href='/'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
                 </div>
             </div>
-            
+            <div style="align-self: center;background: #b73f32; padding:5px 10px;" >
+                <h5 class="text-white mb-0" style="font-weight: 800; font-size: 8px">OBSERVATOIRE DU NUMERIQUE SOUTENABLE</h5>
+            </div>
+
             <div style="align-self:center;">
                 <div class="container d-flex justify-content-between align-items-center">
 
