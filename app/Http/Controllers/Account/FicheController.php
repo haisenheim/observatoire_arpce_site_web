@@ -8,8 +8,6 @@ use App\Models\Datacenter;
 use App\Models\DatacenterFiche;
 use App\Models\Fiche;
 use App\Models\Form;
-use App\Models\Rapport;
-use App\Models\Region;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -23,7 +21,7 @@ class FicheController extends ExtendedController
     public function index()
     {
         //
-        $fiches = Fiche::where('entreprise_id',auth()->user()->entreprise_id)->get();
+        $fiches = Form::where('entreprise_id',auth()->user()->entreprise_id)->get();
         return view('/Account/Fiches/index')->with(compact('fiches'));
     }
 

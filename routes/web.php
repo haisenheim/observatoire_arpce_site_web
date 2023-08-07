@@ -6,6 +6,7 @@ use App\Mail\SendEmail;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Faq;
+use App\Models\Form;
 use App\Models\Indicateur;
 use App\Models\Param;
 use App\Models\Rapport;
@@ -59,7 +60,31 @@ Route::get('/data',function(){
     $eau = $indicateurs->where('type_id',2);
     $ges = $indicateurs->where('type_id',3);
     $source = Source::find(1);
-    return response()->json(['elec'=>$electricite,'eau'=>$eau,'ges'=>$ges,'source'=>$source]);
+    $forms = Form::where('active',1)->get();
+    $groups = $forms->groupBy('annee');
+    $qt_eau = [];
+    foreach($groups as $k=>$v){
+        $qt_eau[$k] = $v->reduce(function($carry,$item){
+            return $carry + $item->qt_eau;
+        });
+    }
+    $energie_elec = [];
+    foreach($groups as $k=>$v){
+        $energie_elec[$k] = $v->reduce(function($carry,$item){
+            return $carry + $item->energie_elec;
+        });
+    }
+
+    $emissions = [];
+    foreach($groups as $k=>$v){
+        $emissions[$k] = $v->reduce(function($carry,$item){
+            return $carry + $item->emission;
+        })/count($v);
+    }
+    //$eau = $qt_eau/count($forms);
+
+
+    return response()->json(['elec'=>$energie_elec,'eau'=>$eau,'qt_eau'=>$qt_eau,'ges'=>$emissions,'source'=>$source]);
 });
 
 Route::get('/dashboard', function () {
@@ -201,11 +226,7 @@ Route::prefix('account')
         Route::get('/profil','ProfilController@index');
         Route::post('/profil','ProfilController@store');
         Route::resource('articles', 'ArticleController');
-
     });
-
-
-
 
 Route::get('/print/{id}',[OperateurController::class,'print']);
 

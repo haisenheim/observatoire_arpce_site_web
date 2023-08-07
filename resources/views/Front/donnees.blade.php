@@ -20,7 +20,7 @@
     <section id="services" class="services">
         <div class="section-title">
             <h2>TABLEAU DE BORD DES DONNEES ENVIRONNEMENTALES </h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            <p>Données collectées auprès des acteurs majeurs du numérique au Congo incluant MTN, Airtel, Congo Telecom…</p>
           </div>
       <div class="container">
         <hr/>
@@ -29,24 +29,9 @@
         </div>
 
         <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ANNEE</th>
-                                <th>CONSOMMATION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sec1 as $k=>$v)
-                                <tr>
-                                    <td>{{ $k }}</td>
-                                    <td style="text-align: right">{{ $v }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+            <div style="display: flex" class="col-md-5 col-sm-12">
+                <div style="align-self: center">
+                    <p>Moyenne de la consommation électrique des entreprises participantes.</p>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12">
@@ -58,24 +43,9 @@
             <h5 class="text-center">Consommation eau en m3</h5>
         </div>
         <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ANNEE</th>
-                                <th>CONSOMMATION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sec2 as $k=>$v)
-                                <tr>
-                                    <td>{{ $k }}</td>
-                                    <td style="text-align: right">{{ $v }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+            <div style="display: flex" class="col-md-5 col-sm-12">
+                <div style="align-self: center">
+                    <p>Moyenne de la consommation électrique des entreprises participantes </p>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12">
@@ -87,24 +57,9 @@
             <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
         </div>
         <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>ANNEE</th>
-                                <th>CONSOMMATION</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($sec3 as $k=>$v)
-                                <tr>
-                                    <td>{{ $k }}</td>
-                                    <td style="text-align: right">{{ $v }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+            <div style="display: flex" class="col-md-5 col-sm-12">
+                <div style="align-self: center">
+                    <p>Calcul des émissions moyenne de Gaz à effet de serre en prenant en compte le mix énergétique du congo d’après les données de E2C </p>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12">
@@ -117,30 +72,9 @@
             <h5 class="text-center">Repartition des sources d'energie</h5>
         </div>
         <div class="row">
-            <div class="col-md-5 col-sm-12">
-                <div>
-                    <table class="table table-sm table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>SOURCE</th>
-                                <th>POURCENTAGE</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>E2C</td>
-                                <td style="text-align: right">{{ $source->e2c }}%</td>
-                            </tr>
-                            <tr>
-                                <td>Groupe electrogene</td>
-                                <td style="text-align: right">{{ $source->ge }}%</td>
-                            </tr>
-                            <tr>
-                                <td>Renouvelable</td>
-                                <td style="text-align: right">{{ $source->er }}%</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <div style="display: flex" class="col-md-5 col-sm-12">
+                <div style="align-self: center">
+                    <p>Origines moyennes des approvisionnements énergétiques des entreprises participantes</p>
                 </div>
             </div>
             <div class="col-md-7 col-sm-12">
@@ -159,7 +93,7 @@
 
         <div class="section-title">
           <h2>ENTREPRISES PARTENAIRES</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>L'Observatoire du Numérique Soutenable est fier de compter parmi ses partenaires les entreprises ci-dessous</p>
         </div>
 
         <div class="clients-slider swiper">
@@ -188,17 +122,22 @@
             dataType:'json',
             success:function(secs){
                 //console.log(Object.keys(secs.sec1));
+                var qt_eau = secs.qt_eau;
+                console.log(Object.values(qt_eau));
+                console.log(Object.entries(qt_eau));
                 var arr1 = Object.entries(secs.elec);
-                lab1 = arr1.map((el)=>el[1].annee)
-                dat1 = arr1.map((el)=>el[1].valeur)
+                lab1 = Object.keys(secs.elec);
+                dat1 = Object.values(secs.elec);
                 var arr2 = Object.entries(secs.eau);
-                lab2 = arr2.map((el)=>el[1].annee)
-                dat2 = arr2.map((el)=>el[1].valeur)
-                var arr3 = Object.entries(secs.ges);
-                lab3 = arr3.map((el)=>el[1].annee)
-                dat3 = arr3.map((el)=>el[1].valeur);
+                //lab2 = arr2.map((el)=>el[1].annee)
+                lab2 = Object.keys(qt_eau);
+                //dat2 = arr2.map((el)=>el[1].valeur)
+                dat2 = Object.values(qt_eau)
+                //var arr3 = Object.entries(secs.ges);
+                lab3 = Object.keys(secs.ges);
+                dat3 = Object.values(secs.ges);
                 dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
-                console.log(dat4);
+                //console.log(dat4);
 
                // var l1 = Object.keys(secs.sec1);
                // var d1 = Object.values(secs.sec1);
