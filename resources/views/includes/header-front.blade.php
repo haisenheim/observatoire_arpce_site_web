@@ -35,7 +35,11 @@
 
       <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
+    
     <div class="container d-flex justify-content-center justify-content-md-between">
+        <div style="align-self: center;background: #b73f32; padding:5px 10px;" >
+            <h5 class="text-white mb-0" style="font-weight: 800; font-size: 15px">OBSERVATOIRE DU NUMERIQUE SOUTENABLE</h5>
+        </div>
       <div class="contact-info d-flex align-items-center">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@arpce.cg">contact@arpce.cg</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+242 05 510 72 72</span></i>
@@ -51,50 +55,61 @@
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-between align-items-center">
-
-      <div class="logo">
-       <!-- <h1><a href="/">Eterna</a></h1> -->
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href='/'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
-      </div>
-
-      <?php
-            $active = \Illuminate\Support\Facades\Session::get('active');
-            $auth =  auth()->user();
-            ?>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="{{ $active==1?'active':'' }}" href="/">ACCUEIL</a></li>
-          <li><a class="{{ $active==2?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a></li>
-          <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
-          <li><a class="{{ $active==4?'active':'' }}" href="/contact">CONTACT</a></li>
-          @if($auth)
-          <?php $entx = \App\Models\Entreprise::find(auth()->user()->entreprise_id); ?>
-        <li class="dropdown">
-            <a class="">
-                <div class="text-center">
-                    <i style="font-size:25px;" class="bi bi-person"></i><i class="bi bi-chevron-down"></i>
+    <div class="container-fluid">
+        <div style="display: flex; justify-content: space-between">
+            <div class="">
+                <div class="logo">
+                    <!-- <h1><a href="/">Eterna</a></h1> -->
+                     <!-- Uncomment below if you prefer to use an image logo -->
+                     <a href='/'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
                 </div>
-            </a>
-            <ul>
-                <li><a href="/account/profil">Profil</a></li>
-                <li><a href="/account/rapports">Rapports</a></li>
-                <li><a href="/account/fiches">Fiches</a></li>
-                @if($entx->secteur_id == 3)
-                <li><a href="/account/datacenters">Centres de donnees</a></li>
-                @endif
-                <li><a href="/logout">Se deconnecter</a></li>
-            </ul>
-        </li>
+            </div>
+            
+            <div style="align-self:center;">
+                <div class="container d-flex justify-content-between align-items-center">
 
-          @else
-            <li><a class="" style="" href="/login">Connexion</a></li>
-          @endif
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
 
+                    <?php
+                          $active = \Illuminate\Support\Facades\Session::get('active');
+                          $auth =  auth()->user();
+                          ?>
+
+                    <nav id="navbar" class="navbar">
+                      <ul>
+                        <li><a class="{{ $active==1?'active':'' }}" href="/">ACCUEIL</a></li>
+                        <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
+                        <li><a class="{{ $active==3?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a></li>
+                        <li><a class="{{ $active==4?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
+                        <li><a class="{{ $active==5?'active':'' }}" href="/faq">FAQ</a></li>
+                        <li><a class="{{ $active==6?'active':'' }}" href="/contact">CONTACT</a></li>
+                        @if($auth)
+                        <?php $entx = \App\Models\Entreprise::find(auth()->user()->entreprise_id); ?>
+                      <li class="dropdown">
+                          <a class="">
+                              <div class="text-center">
+                                  <i style="font-size:25px;" class="bi bi-person"></i><i class="bi bi-chevron-down"></i>
+                              </div>
+                          </a>
+                          <ul>
+                              <li><a href="/account/profil">Profil</a></li>
+                              <li><a href="/account/rapports">Rapports</a></li>
+                              <li><a href="/account/fiches">Fiches</a></li>
+                              @if($entx->secteur_id == 3)
+                              <li><a href="/account/datacenters">Centres de donnees</a></li>
+                              @endif
+                              <li><a href="/logout">Se deconnecter</a></li>
+                          </ul>
+                      </li>
+
+                        @else
+                          <li><a class="" style="" href="/login">Connexion</a></li>
+                        @endif
+                      </ul>
+                      <i class="bi bi-list mobile-nav-toggle"></i>
+                    </nav><!-- .navbar -->
+
+                  </div>
+            </div>
+        </div>
     </div>
   </header><!-- End Header -->

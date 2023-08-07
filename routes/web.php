@@ -1,14 +1,18 @@
 <?php
 
 use App\Http\Controllers\OperateurController;
+use App\Mail\SendContactMail;
 use App\Mail\SendEmail;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Faq;
 use App\Models\Indicateur;
+use App\Models\Param;
 use App\Models\Rapport;
 use App\Models\Source;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -82,7 +86,7 @@ Route::get('/dashboard', function () {
         });
     });
     $source = Source::find(1);
-	return view('Front/about')->with(compact('sec1','sec2','sec3','source'));
+	return view('Front/donnees')->with(compact('sec1','sec2','sec3','source'));
 })->middleware('active');
 
 Route::get('/blog', function () {
@@ -91,6 +95,16 @@ Route::get('/blog', function () {
     $articles = Article::where('active',1)->paginate(1);
     $tags = Tag::all();
 	return view('Front/blog')->with(compact('rapports','tags','categories','articles'));
+})->middleware('active');
+
+Route::get('/about', function () {
+    $param = Param::find(1);
+	return view('Front/about')->with(compact('param'));
+})->middleware('active');
+
+Route::get('/faq', function () {
+    $faqs = Faq::all();
+	return view('Front/faq')->with(compact('faqs'));
 })->middleware('active');
 
 Route::get('/article/{token}', function ($token) {
@@ -104,12 +118,16 @@ Route::get('/contact', function () {
 	return view('Front/contact');
 })->middleware('active');
 
+Route::post('/sendcontact',function(){
+    $data= request()->all();
+    Mail::to('clementessomba@alliages-tech.com')
+    ->send(new SendContactMail($data));
+    return back();
+});
+
 
 Route::post('send-email', function(){
-    $mailData = [
-        "name" => "Test NAME",
-        "dob" => "12/12/1990"
-    ];
+
     $data = [
         'name'=>request()->name,
         'email'=>request()->email,
@@ -141,8 +159,15 @@ Route::prefix('admin')
         Route::post('article/tag', 'ArticleController@addTag');
         Route::post('article/update', 'ArticleController@save');
         Route::get('fiches/{token}', 'DashboardController@showFiche');
+        Route::get('fiche/export/{token}', 'DashboardController@exportFiche');
         Route::get('article/enable/{id}', 'ArticleController@enable');
         Route::get('article/disable/{id}', 'ArticleController@disable');
+        Route::get('fiche/save', 'DashboardController@saveFiche');
+
+        Route::resource('faqs', 'FaqController');
+        Route::get('faq/enable/{id}', 'FaqController@enable');
+        Route::get('faq/disable/{id}', 'FaqController@disable');
+
         Route::get('communes', 'CommuneController@index');
         Route::post('communes', 'CommuneController@store');
         Route::get('indicateurs', 'IndicateurController@index');
@@ -170,6 +195,7 @@ Route::prefix('account')
     ->group(function(){
         Route::resource('rapports', 'RapportController');
         Route::resource('fiches', 'FicheController');
+        Route::get('fiche/save', 'FicheController@save');
         Route::post('/fiche/datacenter','FicheController@addDatacenter');
         Route::resource('datacenters', 'DatacenterController');
         Route::get('/profil','ProfilController@index');

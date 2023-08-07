@@ -54,8 +54,9 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
+            <form action="/sendcontact" method="POST" role="form" class="php-email-form">
+              @csrf
+                <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Nom" required>
                 </div>
