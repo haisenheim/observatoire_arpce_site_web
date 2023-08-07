@@ -62,8 +62,8 @@
                      <a href='/'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
                 </div>
             </div>
-            <div style="align-self: center;background: #b73f32; padding:5px 10px;" >
-                <h5 class="text-white mb-0" style="font-weight: 800; font-size: 8px">OBSERVATOIRE DU NUMERIQUE SOUTENABLE</h5>
+            <div style="align-self: center; padding:5px 10px;" >
+                <h5 class="mb-0 text-center" style="font-weight: 800; font-size: 15px; color:#b73f32">OBSERVATOIRE DU NUMERIQUE SOUTENABLE</h5>
             </div>
 
             <div style="align-self:center;">
