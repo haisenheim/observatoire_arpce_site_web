@@ -79,6 +79,13 @@
             </div>
             <div class="col-md-7 col-sm-12">
                 <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
+                <div style="font-size: smaller" class="text-center">
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><span class="badge badge-e2c">E2C</span></li>
+                        <li class="list-inline-item"><span class="badge badge-ge">GE</span></li>
+                        <li class="list-inline-item"><span class="badge badge-er">RENOUVELABLE</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
 
@@ -137,8 +144,10 @@
                 lab3 = Object.keys(secs.ges);
                 dat3 = Object.values(secs.ges);
                 dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
-                //console.log(dat4);
 
+                $(".badge-e2c").text("E2C - "+secs.source.e2c+"%");
+                $(".badge-ge").text("GE - "+secs.source.ge+"%");
+                $(".badge-er").text("Renouvelable - "+secs.source.er+"%");
                // var l1 = Object.keys(secs.sec1);
                // var d1 = Object.values(secs.sec1);
 
@@ -259,4 +268,15 @@
         });
     });
   </script>
+  <style>
+    .badge-e2c{
+        background: #3080d0
+    }
+    .badge-ge{
+        background: #c11b1b
+    }
+    .badge-er{
+        background: #3d9970
+    }
+  </style>
 @endsection
