@@ -4,6 +4,7 @@ namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Mail\Attachment;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -60,6 +61,10 @@ class SendReportMail extends Mailable
      */
     public function attachments()
     {
-        return [];
+        return [
+            Attachment::fromPath($this->report->fichier)
+            ->as($this->report->name .'.pdf')
+            ->withMime('application/pdf'),
+        ];
     }
 }

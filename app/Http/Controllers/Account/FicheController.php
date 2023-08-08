@@ -71,10 +71,14 @@ class FicheController extends ExtendedController
         isset($request->has_policy)?$data['has_policy']=1:$data['has_policy']=0;
         $data['token'] = sha1($user->id.time());
         $fiche = Form::updateOrCreate($data);
-        
+
         Mail::to('clementessomba@alliages-tech.com')
         ->send(new SendFormMail($fiche));
         Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
+        ->send(new SendFormMail($fiche));
+        Mail::to('danielle.ouanounga@arpce.cg')
+        ->send(new SendFormMail($fiche));
+        Mail::to('pascal.mouandza@arpce.cg')
         ->send(new SendFormMail($fiche));
         return redirect('/account/fiches/'.$fiche->token);
     }
