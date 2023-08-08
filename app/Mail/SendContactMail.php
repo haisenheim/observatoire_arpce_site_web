@@ -34,12 +34,12 @@ class SendContactMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('clementessomba@gmail.com', 'Esso Essomba'),
-            subject: 'Order Shipped',
+            from: new Address('info@obs-arpce.cg', 'Observatoire du Numerique Soutenable'),
+            subject: "Prise de contact depuis le site internet ",
         );
     }
 
-    
+
 
     /**
      * Get the message content definition.
@@ -49,7 +49,7 @@ class SendContactMail extends Mailable
     public function content()
     {
         return new Content(
-            view: 'Email.testMail',
+            view: 'Email.contactMail',
         );
     }
 
