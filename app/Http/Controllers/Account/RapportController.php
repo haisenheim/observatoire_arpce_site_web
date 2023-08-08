@@ -60,10 +60,10 @@ class RapportController extends ExtendedController
         ->send(new SendReportMail($rapport));
         Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
         ->send(new SendReportMail($rapport));
-       /*  Mail::to('danielle.ouanounga@arpce.cg')
+        Mail::to('danielle.ouanounga@arpce.cg')
         ->send(new SendReportMail($rapport));
         Mail::to('pascal.mouandza@arpce.cg')
-        ->send(new SendReportMail($rapport)); */
+        ->send(new SendReportMail($rapport));
         return back();
     }
 
