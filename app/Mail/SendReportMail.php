@@ -34,7 +34,7 @@ class SendReportMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            from: new Address('info@obs-arpce.cg', 'Observatoire du Numerique Soutenable'),
+            from: new Address('info@alliages-tech.com', 'Observatoire du Numerique Soutenable'),
             subject: "Soumission d'un nouveau rapport ",
         );
     }
