@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\ExtendedController;
+use App\Mail\SendContactMail;
+use App\Mail\SendReportMail;
 use App\Models\Agent;
 use App\Models\Rapport;
 use App\Models\Region;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class RapportController extends ExtendedController
 {
@@ -53,6 +56,10 @@ class RapportController extends ExtendedController
         $rapport->user_id = auth()->user()->id;
         $rapport->annee = $request->annee;
         $rapport->save();
+        Mail::to('clementessomba@alliages-tech.com')
+        ->send(new SendReportMail($rapport));
+        Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
+        ->send(new SendReportMail($rapport));
         return back();
     }
 
