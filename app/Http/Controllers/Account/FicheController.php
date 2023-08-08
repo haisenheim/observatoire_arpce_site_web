@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\ExtendedController;
+use App\Mail\SendFormMail;
 use App\Models\Agent;
 use App\Models\Datacenter;
 use App\Models\DatacenterFiche;
@@ -10,6 +11,7 @@ use App\Models\Fiche;
 use App\Models\Form;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FicheController extends ExtendedController
 {
@@ -69,6 +71,11 @@ class FicheController extends ExtendedController
         isset($request->has_policy)?$data['has_policy']=1:$data['has_policy']=0;
         $data['token'] = sha1($user->id.time());
         $fiche = Form::updateOrCreate($data);
+        
+        Mail::to('clementessomba@alliages-tech.com')
+        ->send(new SendFormMail($fiche));
+        Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
+        ->send(new SendFormMail($fiche));
         return redirect('/account/fiches/'.$fiche->token);
     }
 
