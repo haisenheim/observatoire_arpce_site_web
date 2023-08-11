@@ -61,7 +61,7 @@
     </div>
   </section><!-- End Hero -->
 
-  <main id="main">
+  <main id="">
 
             <!-- ======= Featured Section ======= -->
     <section id="featured" class="featured">
