@@ -147,6 +147,12 @@ Route::post('/sendcontact',function(){
     $data= request()->all();
     Mail::to('clementessomba@alliages-tech.com')
     ->send(new SendContactMail($data));
+    Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
+        ->send(new SendContactMail($data));
+        Mail::to('danielle.ouanounga@arpce.cg')
+        ->send(new SendContactMail($data));
+        Mail::to('pascal.mouandza@arpce.cg')
+        ->send(new SendContactMail($data));
     return back();
 });
 

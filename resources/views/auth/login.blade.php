@@ -14,7 +14,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css') }}">
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="">
 <div class="login-box">
 
   <!-- /.login-logo -->
@@ -25,7 +25,7 @@
                 <img height="160" src="{{ asset('img/logo.png') }}" alt="">
             </a>
           </div>
-      <p class="login-box-msg" style="color:#3d9970">Se connecter pour entrer dans votre espace</p>
+      <p class="login-box-msg" style="color:#759b37">Se connecter pour entrer dans votre espace</p>
 
       <form action="{{ route('login') }}" method="post">
         @csrf
@@ -56,7 +56,7 @@
           </div>
           <!-- /.col -->
           <div class="col-md-12">
-            <button type="submit" style="background: #3d9970; color: white" class="btn btn-block">Se connecter</button>
+            <button type="submit" style="background: #759b37; color: white" class="btn btn-block">Se connecter</button>
           </div>
           <!-- /.col -->
         </div>

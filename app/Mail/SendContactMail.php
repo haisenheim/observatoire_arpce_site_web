@@ -35,7 +35,7 @@ class SendContactMail extends Mailable
     {
         return new Envelope(
             from: new Address('info@alliages-tech.com', 'Observatoire du Numerique Soutenable'),
-            subject: "Prise de contact depuis le site internet ",
+            subject: "Formulaire de contact du site de l'observatoire ",
         );
     }
 
