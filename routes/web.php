@@ -5,6 +5,7 @@ use App\Mail\SendContactMail;
 use App\Mail\SendEmail;
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Entreprise;
 use App\Models\Faq;
 use App\Models\Form;
 use App\Models\Indicateur;
@@ -55,12 +56,17 @@ Route::get('/', function () {
 })->middleware('active');
 
 Route::get('/data',function(){
-    $indicateurs = Indicateur::all();
-    $electricite = $indicateurs->where('type_id',1);
-    $eau = $indicateurs->where('type_id',2);
-    $ges = $indicateurs->where('type_id',3);
+   // $indicateurs = Indicateur::all();
+    //$electricite = $indicateurs->where('type_id',1);
+   // $eau = $indicateurs->where('type_id',2);
+    //$ges = $indicateurs->where('type_id',3);
+    $id = request()->id;
+
     $source = Source::find(1);
     $forms = Form::where('active',1)->get();
+    if($id){
+        $forms = $forms->where('entreprise_id',$id);
+    }
     $groups = $forms->groupBy('annee');
     $qt_eau = [];
     foreach($groups as $k=>$v){
@@ -82,37 +88,22 @@ Route::get('/data',function(){
         })/count($v);
     }
     //$eau = $qt_eau/count($forms);
-
-
-    return response()->json(['elec'=>$energie_elec,'eau'=>$eau,'qt_eau'=>$qt_eau,'ges'=>$emissions,'source'=>$source]);
+    return response()->json(['elec'=>$energie_elec,'qt_eau'=>$qt_eau,'ges'=>$emissions,'source'=>$source]);
 });
 
 Route::get('/dashboard', function () {
-    $indicateurs = Indicateur::all();
-    $electricite = $indicateurs->where('type_id',1);
-    $eau = $indicateurs->where('type_id',2);
-    $ges = $indicateurs->where('type_id',3);
-    $grp1 = $electricite->groupBy('annee');
-    $grp2 = $eau->groupBy('annee');
-    $grp3 = $ges->groupBy('annee');
-    $sec1 = $grp1->map(function($k){
-        return $k->reduce(function($carry,$item){
-            return $carry + $item->valeur;
-        });
-    });
-    $sec2 = $grp2->map(function($k){
-        return $k->reduce(function($carry,$item){
-            return $carry + $item->valeur;
-        });
-    });
-    $sec3 = $grp3->map(function($k){
-        return $k->reduce(function($carry,$item){
-            return $carry + $item->valeur;
-        });
-    });
     $source = Source::find(1);
-	return view('Front/donnees')->with(compact('sec1','sec2','sec3','source'));
+    $entreprises = Entreprise::where('active',1)->get();
+    $name = request()->name;
+    if($name){
+        $entreprise = Entreprise::where('name',$name)->first();
+        return view('Front/donnees_operateur')->with(compact('entreprises','entreprise','source'));
+    }
+
+	return view('Front/donnees')->with(compact('entreprises','source'));
 })->middleware('active');
+
+
 
 Route::get('/blog', function () {
     $rapports = Rapport::all();

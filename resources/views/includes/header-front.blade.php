@@ -79,7 +79,9 @@
                       <ul>
                         <li><a class="{{ $active==1?'active':'' }}" href="/">ACCUEIL</a></li>
                         <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
-                        <li><a class="{{ $active==3?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a></li>
+                        <li class="">
+                            <a class="{{ $active==3?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a>
+                        </li>
                         <li><a class="{{ $active==4?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
                         <li><a class="{{ $active==5?'active':'' }}" href="/faq">FAQ</a></li>
                         <li><a class="{{ $active==6?'active':'' }}" href="/contact">CONTACT</a></li>
@@ -95,9 +97,7 @@
                               <li><a href="/account/profil">Profil</a></li>
                               <li><a href="/account/rapports">Rapports</a></li>
                               <li><a href="/account/fiches">Fiches</a></li>
-                              @if($entx->secteur_id == 3)
-                              <li><a href="/account/datacenters">Centres de donnees</a></li>
-                              @endif
+                              
                               <li><a href="/logout">Se deconnecter</a></li>
                           </ul>
                       </li>

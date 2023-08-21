@@ -11,8 +11,24 @@
           <li><a href="/">Accueil</a></li>
           <li>Tableau de bord</li>
         </ol>
-        <h2>DONNEES ENVIRONNEMENTALES</h2>
-
+        <h2 id="title">DONNEES GLOBALES ENVIRONNEMENTALES</h2>
+        <div class="row">
+            <div class="col-md-5 col-sm-12">
+                <fieldset>
+                    <legend>Selectionner un operateur pour obtenir ses donnees specifiques</legend>
+                    <form class="" action="/dashboard" method="get">
+                        <div class="form-group">
+                            <select required name="name" id="entreprise_id" class="form-control">
+                                <option value="">Operateur ...</option>
+                                @foreach ($entreprises as $op)
+                                    <option value="{{ $op->id }}">{{ $op->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </form>
+                </fieldset>
+            </div>
+        </div>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -122,144 +138,16 @@
   </main><!-- End #main -->
   <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
   <script>
+    var elec = document.getElementById("elec").getContext("2d");
     $(document).ready(function(){
         $.ajax({
             url:'/data',
             type:'get',
             dataType:'json',
             success:function(secs){
+                console.log('ok')
                 //console.log(Object.keys(secs.sec1));
-                var qt_eau = secs.qt_eau;
-                console.log(Object.values(qt_eau));
-                console.log(Object.entries(qt_eau));
-                var arr1 = Object.entries(secs.elec);
-                lab1 = Object.keys(secs.elec);
-                dat1 = Object.values(secs.elec);
-                var arr2 = Object.entries(secs.eau);
-                //lab2 = arr2.map((el)=>el[1].annee)
-                lab2 = Object.keys(qt_eau);
-                //dat2 = arr2.map((el)=>el[1].valeur)
-                dat2 = Object.values(qt_eau)
-                //var arr3 = Object.entries(secs.ges);
-                lab3 = Object.keys(secs.ges);
-                dat3 = Object.values(secs.ges);
-                dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
-
-                $(".badge-e2c").text("E2C - "+secs.source.e2c+"%");
-                $(".badge-ge").text("GE - "+secs.source.ge+"%");
-                $(".badge-er").text("Renouvelable - "+secs.source.er+"%");
-               // var l1 = Object.keys(secs.sec1);
-               // var d1 = Object.values(secs.sec1);
-
-                new Chart(
-                    document.getElementById('elec'),
-                    {
-                    type: 'line',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        labels: lab1,
-                        datasets: [
-                        {
-                            label: 'Consommation electrique',
-                            data: dat1,
-                            borderColor: '#3d9970',
-                        }
-                        ]
-                    }
-                    }
-                );
-                new Chart(
-                    document.getElementById('eau'),
-                    {
-                    type: 'bar',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        labels: lab2,
-                        datasets: [
-                        {
-                            label: 'Consommation d\'eau',
-                            data: dat2,
-                            backgroundColor: '#3d9970',
-                        }
-                        ]
-                    }
-                    }
-                );
-                new Chart(
-                    document.getElementById('ges'),
-                    {
-                    type: 'line',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        labels: lab3,
-                        datasets: [
-                        {
-                            label: 'Gaz a effet de serre',
-                            data: dat3,
-                            borderColor: '#3d9970',
-                        }
-                        ]
-                    }
-                    }
-                );
-                new Chart(
-                    document.getElementById('source'),
-                    {
-                    type: 'pie',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        //labels: lab3,
-                        datasets: [
-                        {
-                            label: 'Repartition',
-                            data: dat4,
-                            //borderColor: '#3d9970',
-                            backgroundColor: ['#3080d0','#c11b1b','#3d9970'],
-                        }
-                        ]
-                    }
-                    }
-                );
+                drawCharts(secs);
 
               },
             error:function(err){
@@ -267,6 +155,183 @@
             }
         });
     });
+
+    $('#entreprise_id').change(function(){
+        var _id = $(this).val();
+        var name = $('#entreprise_id option:selected').text();
+        var title = `DONNEES ENVIRONNEMENTALES - ${name}`;
+        $('#title').text(title);
+        $.ajax({
+            url:'/data',
+            type:'get',
+            dataType:'json',
+            data:{id:_id},
+            success:function(secs){
+                console.log('ok')
+                //console.log(Object.keys(secs.sec1));
+                //elecChart.destroy();
+                let chart1 = Chart.getChart("elec"); // <canvas> id
+                    if (chart1 != undefined) {
+                        console.log("electricite");
+                        chart1.destroy();
+                    }
+                let chart2 = Chart.getChart("eau"); // <canvas> id
+                    if (chart2 != undefined) {
+                        console.log("eau");
+                        chart2.destroy();
+                    }
+                let chart3 = Chart.getChart("ges"); // <canvas> id
+                    if (chart3 != undefined) {
+                        console.log("ges");
+                        chart3.destroy();
+                    }
+                    let chart4 = Chart.getChart("source"); // <canvas> id
+                    if (chart4 != undefined) {
+                        console.log("source");
+                        chart4.destroy();
+                    }
+                drawCharts(secs);
+
+              },
+            error:function(err){
+                console.log(err);
+            }
+        });
+    });
+
+    function drawCharts(secs){
+        var qt_eau = secs.qt_eau;
+        console.log(Object.values(qt_eau));
+        console.log(Object.entries(qt_eau));
+       // var arr1 = Object.entries(secs.elec);
+        lab1 = Object.keys(secs.elec);
+        dat1 = Object.values(secs.elec);
+       // var arr2 = Object.entries(secs.eau);
+        //lab2 = arr2.map((el)=>el[1].annee)
+        lab2 = Object.keys(qt_eau);
+        //dat2 = arr2.map((el)=>el[1].valeur)
+        dat2 = Object.values(qt_eau)
+        //var arr3 = Object.entries(secs.ges);
+        lab3 = Object.keys(secs.ges);
+        dat3 = Object.values(secs.ges);
+        dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
+
+        $(".badge-e2c").text("E2C - "+secs.source.e2c+"%");
+        $(".badge-ge").text("GE - "+secs.source.ge+"%");
+        $(".badge-er").text("Renouvelable - "+secs.source.er+"%");
+        // var l1 = Object.keys(secs.sec1);
+        // var d1 = Object.values(secs.sec1);
+
+        var elecChart = new Chart(
+            elec,
+            {
+            type: 'line',
+            options: {
+                animation: false,
+                plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
+                }
+            },
+            data: {
+                labels: lab1,
+                datasets: [
+                {
+                    label: 'Consommation electrique',
+                    data: dat1,
+                    borderColor: '#3d9970',
+                }
+                ]
+            }
+            }
+        );
+        new Chart(
+            document.getElementById('eau'),
+            {
+            type: 'bar',
+            options: {
+                animation: false,
+                plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
+                }
+            },
+            data: {
+                labels: lab2,
+                datasets: [
+                {
+                    label: 'Consommation d\'eau',
+                    data: dat2,
+                    backgroundColor: '#3d9970',
+                }
+                ]
+            }
+            }
+        );
+        new Chart(
+            document.getElementById('ges'),
+            {
+            type: 'line',
+            options: {
+                animation: false,
+                plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
+                }
+            },
+            data: {
+                labels: lab3,
+                datasets: [
+                {
+                    label: 'Gaz a effet de serre',
+                    data: dat3,
+                    borderColor: '#3d9970',
+                }
+                ]
+            }
+            }
+        );
+        new Chart(
+            document.getElementById('source'),
+            {
+            type: 'pie',
+            options: {
+                animation: false,
+                plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    enabled: false
+                }
+                }
+            },
+            data: {
+                //labels: lab3,
+                datasets: [
+                {
+                    label: 'Repartition',
+                    data: dat4,
+                    //borderColor: '#3d9970',
+                    backgroundColor: ['#3080d0','#c11b1b','#3d9970'],
+                }
+                ]
+            }
+            }
+        );
+    }
   </script>
   <style>
     .badge-e2c{
