@@ -137,7 +137,7 @@ Route::get('/textes', function () {
 
 Route::get('/bonnes-pratiques', function () {
     $pratiques = Pratique::orderBy('created_at','DESC')->where('active',1)->paginate(10);
-	return view('Front/pratique')->with(compact('pratiques'));
+	return view('Front/pratiques')->with(compact('pratiques'));
 })->middleware('active');
 
 Route::get('/article/{token}', function ($token) {
