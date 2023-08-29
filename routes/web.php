@@ -10,9 +10,11 @@ use App\Models\Faq;
 use App\Models\Form;
 use App\Models\Indicateur;
 use App\Models\Param;
+use App\Models\Pratique;
 use App\Models\Rapport;
 use App\Models\Source;
 use App\Models\Tag;
+use App\Models\Texte;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
@@ -121,6 +123,21 @@ Route::get('/about', function () {
 Route::get('/faq', function () {
     $faqs = Faq::all();
 	return view('Front/faq')->with(compact('faqs'));
+})->middleware('active');
+
+Route::get('/rapports', function () {
+    $rapports = Rapport::orderBy('created_at','DESC')->where('active',1)->paginate(10);
+	return view('Front/rapports')->with(compact('rapports'));
+})->middleware('active');
+
+Route::get('/textes', function () {
+    $textes = Texte::orderBy('created_at','DESC')->where('active',1)->paginate(10);
+	return view('Front/textes')->with(compact('textes'));
+})->middleware('active');
+
+Route::get('/bonnes-pratiques', function () {
+    $pratiques = Pratique::orderBy('created_at','DESC')->where('active',1)->paginate(10);
+	return view('Front/pratique')->with(compact('pratiques'));
 })->middleware('active');
 
 Route::get('/article/{token}', function ($token) {

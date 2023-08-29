@@ -12,6 +12,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">ACCUEIL</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/dashboard">Donnees environnementales</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/faq">Faq</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/blog">Publications</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
             </ul>
@@ -20,7 +21,7 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>LIENS UTILES</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="https://arpce.cg/">ARPCE</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="https://www.arpce.cg/">ARPCE</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="https://postetelecom.gouv.cg/">Ministere des Postes et Telecoms</a></li>
 
             </ul>
@@ -53,7 +54,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Observatoire du Numerique Soutenable</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Observatoire du Numerique Responsable</span></strong>. All Rights Reserved
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -67,7 +68,7 @@
   <script src="{{ asset('Eterna/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
   <script src="{{ asset('Eterna/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
   <script src="{{ asset('Eterna/assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
-  
+
   <!-- Template Main JS File -->
   <script src="{{ asset('Eterna/assets/js/main.js') }}"></script>
   @yield('modal')

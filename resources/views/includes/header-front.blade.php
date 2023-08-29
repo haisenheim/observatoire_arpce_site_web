@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div style="align-self: center; padding:5px 10px;" >
-                <h5 class="mb-0 text-center" style="font-weight: 800; font-size: 15px; color:#b73f32">OBSERVATOIRE DU NUMERIQUE SOUTENABLE</h5>
+                <h5 class="mb-0 text-center" style="font-weight: 800; font-size: 15px; color:#b73f32">OBSERVATOIRE DU NUMERIQUE RESPONSABLE</h5>
             </div>
 
             <div style="align-self:center;">
@@ -80,9 +80,17 @@
                         <li><a class="{{ $active==1?'active':'' }}" href="/">ACCUEIL</a></li>
                         <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
                         <li class="">
-                            <a class="{{ $active==3?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a>
+                            <a class="{{ $active==3?'active':'' }}" href="/dashboard">TABLEAU DE BORD</a>
                         </li>
-                        <li><a class="{{ $active==4?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
+                        <li class="dropdown {{ $active==4?'active':'' }}"><a href="#"><span>PUBLICATIONS</span> <i class="bi bi-chevron-down"></i></a>
+                            <ul>
+                              <li><a href="/blog">ACTUALITE</a></li>
+
+                              <li><a href="/rapports">RAPPORTS</a></li>
+                              <li><a href="/textes">TEXTES REGLEMENTAIRES</a></li>
+                              <li><a href="/bonnes-pratiques">BONNES PRATIQUES</a></li>
+                            </ul>
+                        </li>
                         <li><a class="{{ $active==5?'active':'' }}" href="/faq">FAQ</a></li>
                         <li><a class="{{ $active==6?'active':'' }}" href="/contact">CONTACT</a></li>
                         @if($auth)
@@ -97,7 +105,7 @@
                               <li><a href="/account/profil">Profil</a></li>
                               <li><a href="/account/rapports">Rapports</a></li>
                               <li><a href="/account/fiches">Fiches</a></li>
-                              
+
                               <li><a href="/logout">Se deconnecter</a></li>
                           </ul>
                       </li>

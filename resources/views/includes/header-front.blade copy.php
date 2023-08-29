@@ -67,7 +67,16 @@
         <ul>
           <li><a class="{{ $active==1?'active':'' }}" href="/">Accueil</a></li>
           <li><a class="{{ $active==2?'active':'' }}" href="/dashboard">DONNEES ENVIRONNEMENTALES</a></li>
-          <li><a class="{{ $active==3?'active':'' }}" href="/blog">PUBLICATIONS</a></li>
+
+          <li class="dropdown {{ $active==3?'active':'' }}"><a href="#"><span>PUBLICATIONS</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/blog">ACTUALITE</a></li>
+
+              <li><a href="#">RAPPORTS</a></li>
+              <li><a href="#">TEXTES REGLEMENTAIRES</a></li>
+              <li><a href="#">BONNES PRATIQUES</a></li>
+            </ul>
+          </li>
 
           @if($auth)
           <?php $entx = \App\Models\Entreprise::find(auth()->user()->entreprise_id); ?>

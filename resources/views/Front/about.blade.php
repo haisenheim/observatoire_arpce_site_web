@@ -22,7 +22,7 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <img src="{{ asset('img/param/about.jpg') }}" class="img-fluid" alt="">
+            <img src="{{ asset('img/param/arpce.jpg') }}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 content">
             <h3>PRESENTATION</h3>
@@ -40,31 +40,36 @@
       <div class="container">
 
         <div class="row no-gutters">
+            <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">1- TERMINAUX</h3>
+                    </div>
+                    <div class="card-body">
+                        Les terminaux, qu'il s'agisse de smartphones, d'ordinateurs, de tablettes ou de tout autre dispositif connecté, sont devenus indispensables à notre quotidien numérique. Ces appareils ont un impact environnemental à chaque étape de leur cycle de vie, de la fabrication à la fin de vie, en passant par l'utilisation
+                    </div>
+                </div>
+            </div>
 
           <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-house-door"></i>
-              <span data-purecounter-start="0" data-purecounter-end="{{ $param->nb_entreprises }}" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Entreprises auditees</strong> consequuntur quae qui deca rode</p>
-
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">2- RESEAUX</h3>
+                </div>
+                <div class="card-body">
+                    Le monde est interconnecté grâce à d'immenses réseaux de communication, qu'il s'agisse de réseaux cellulaires, de lignes fixes ou de liaisons satellitaires. Ces réseaux ont leur propre empreinte environnementale.
+                </div>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-heart-fill"></i>
-              <span data-purecounter-start="0" data-purecounter-end="{{ $param->nb_partenaires }}" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Partenaires</strong> adipisci atque cum quia aut numquam delectus</p>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-md-flex align-items-md-stretch">
-            <div class="count-box">
-              <i class="bi bi-file-excel"></i>
-              <span data-purecounter-start="0" data-purecounter-end="{{ $param->nb_rapports }}" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Rapports produits</strong> aut commodi quaerat. Aliquam ratione</p>
-
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">3- DATA CENTERS</h3>
+                </div>
+                <div class="card-body">
+                    Les data centers sont le cœur battant de l'ère numérique. Ils hébergent les sites web, stockent d'énormes quantités de données et exécutent des applications pour le monde entier. Leur empreinte environnementale est significative, en particulier en raison de leur importante consommation énergétique.
+                </div>
             </div>
           </div>
 

@@ -14,7 +14,7 @@
           <div class="carousel-item active" style="background-image: url({{ asset('Eterna/assets/img/slide/slide-1.jpg')}})">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Bienvenue à l'<span>Observatoire</span> du Numérique <span>Soutenable</span></h2>
+                <h2 class="animate__animated animate__fadeInDown">Bienvenue à l'<span>Observatoire</span> du Numérique <span>Responsable</span></h2>
                 <p class="animate__animated animate__fadeInUp">Découvrez l'observatoire dédié à la mesure et à la réduction de l'empreinte carbone
                     du secteur numérique au Congo. Explorez les données, les indicateurs et les initiatives pour
                     un avenir numérique durable.</p>
@@ -74,28 +74,28 @@
             <div class="col-lg-3">
               <div class="icon-box">
                 <i class="bi bi-search"></i>
-                <h3><a href="">COLLECTE</a></h3>
+                <h3><a href="/dashboard">COLLECTE</a></h3>
                 <p>Collecter et analyser les données sur l'impact environnemental du numérique.</p>
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
               <div class="icon-box">
                 <i class="bi bi-binoculars"></i>
-                <h3><a href="">MONITORING</a></h3>
+                <h3><a href="/dashboard">MONITORING</a></h3>
                 <p>Surveiller les progrès réalisés dans la réduction de l'empreinte carbone du secteur numérique.</p>
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
               <div class="icon-box">
                 <i class="bi bi-soundwave"></i>
-                <h3><a href="">SENSIBILISATION</a></h3>
+                <h3><a href="/bonnes-pratiques">SENSIBILISATION</a></h3>
                 <p>Sensibiliser les acteurs de l'écosystème numérique aux enjeux environnementaux.</p>
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
                 <div class="icon-box">
                   <i class="bi bi-graph-up"></i>
-                  <h3><a href="">DEVELOPPEMENT</a></h3>
+                  <h3><a href="/rapports">DEVELOPPEMENT</a></h3>
                   <p>Développer des recommandations pour une transformation numérique plus durable.</p>
                 </div>
               </div>
@@ -142,39 +142,6 @@
               </div>
             </div>
           </section><!-- End Engagement Section -->
-
-
-
-
-
-    <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>ENTREPRISES PARTENAIRES</h2>
-          <p>Découvrez nos précieux partenaires du secteur numérique qui collaborent activement avec
-            l'Observatoire du Numérique Soutenable pour promouvoir des pratiques durables et
-            contribuer à la préservation de l'environnement. </p>
-        </div>
-
-        <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-1.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-2.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-3.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-4.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-5.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-6.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-7.png') }}" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="{{ asset('Eterna/assets/img/clients/client-8.png') }}" class="img-fluid" alt=""></div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
-
   </main><!-- End #main -->
 @endsection
 
