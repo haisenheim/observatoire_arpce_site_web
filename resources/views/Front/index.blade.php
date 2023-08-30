@@ -113,12 +113,10 @@
                 <h2>Nos missions </h2>
                 <div class="pt-4 pt-lg-0 content">
                     <ul>
-                        <li><i class="bi bi-check-circle"></i>Évaluer la consommation d'énergie des infrastructures numériques.</li>
-                        <li><i class="bi bi-check-circle"></i>Mesurer les émissions de gaz à effet de serre liées à la production et à l'utilisation du numérique.</li>
-                        <li><i class="bi bi-check-circle"></i>Analyser la consommation d'eau des data centers et des infrastructures de télécommunication.</li>
-                        <li><i class="bi bi-check-circle"></i>Étudier la gestion des déchets électroniques.</li>
-                        <li><i class="bi bi-check-circle"></i>Promouvoir l'utilisation des énergies renouvelables dans le secteur numérique.</li>
-                      </ul>
+                        <li><i class="bi bi-check-circle"></i>Mesurer et évaluer puis réduire l’empreinte carbone du secteur du numérique au Congo ;</li>
+                        <li><i class="bi bi-check-circle"></i>Faire le bilan carbone des entreprises ;</li>
+                        <li><i class="bi bi-check-circle"></i>Promouvoir les bonnes pratiques dans le développement des réseaux et usages des services numériques.</li>
+                    </ul>
                 </div>
               </div>
 
