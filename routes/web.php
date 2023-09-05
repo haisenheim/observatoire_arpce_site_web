@@ -1,22 +1,5 @@
 <?php
 
-use App\Http\Controllers\OperateurController;
-use App\Mail\SendContactMail;
-use App\Mail\SendEmail;
-use App\Models\Article;
-use App\Models\Category;
-use App\Models\Entreprise;
-use App\Models\Faq;
-use App\Models\Form;
-use App\Models\Indicateur;
-use App\Models\Param;
-use App\Models\Pratique;
-use App\Models\Rapport;
-use App\Models\Source;
-use App\Models\Tag;
-use App\Models\Texte;
-use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,7 +17,6 @@ Route::namespace('App\Http\Controllers')
     ->middleware(['active'])
     ->name('front.')
     ->group(function(){
-        //Route::get('/dashboard','DashboardController@index');
         Route::get('/','FrontController@index');
         Route::get('/data','FrontController@getData');
         Route::get('/dashboard','FrontController@getDashboard');
@@ -49,14 +31,10 @@ Route::namespace('App\Http\Controllers')
         Route::post('/sendcontact','FrontController@sendContact');
     });
 
-
-
-
 Auth::routes();
 Route::get('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
 
-//Route::get('/', [OperateurController::class,'index']);
 Route::prefix('account')
     ->namespace('App\Http\Controllers\Account')
     ->middleware(['auth'])
@@ -69,9 +47,8 @@ Route::prefix('account')
         Route::resource('datacenters', 'DatacenterController');
         Route::get('/profil','ProfilController@index');
         Route::post('/profil','ProfilController@store');
-        Route::resource('articles', 'ArticleController');
     });
 
-Route::get('/print/{id}',[OperateurController::class,'print']);
+
 
 
