@@ -24,35 +24,7 @@
           </div>
       <div class="container">
         <hr/>
-        <div class="section-title">
-            <h5 class="text-center">consommation d'électricité en Kwh</h5>
-        </div>
 
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Moyenne de la consommation électrique des entreprises participantes.</p>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div style="width: 500px;"><canvas id="elec"></canvas></div>
-            </div>
-        </div>
-        <hr/>
-        <div class="section-title">
-            <h5 class="text-center">Consommation eau en m3</h5>
-        </div>
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Moyenne de la consommation électrique des entreprises participantes </p>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div style="width: 500px;"><canvas id="eau"></canvas></div>
-            </div>
-        </div>
-        <hr/>
         <div class="section-title">
             <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
         </div>
@@ -64,28 +36,6 @@
             </div>
             <div class="col-md-7 col-sm-12">
                 <div style="width: 500px;"><canvas id="ges"></canvas></div>
-            </div>
-        </div>
-
-        <hr/>
-        <div class="section-title">
-            <h5 class="text-center">Repartition des sources d'energie</h5>
-        </div>
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Origines moyennes des approvisionnements énergétiques des entreprises participantes</p>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
-                <div style="font-size: smaller" class="text-center">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><span class="badge badge-e2c">E2C</span></li>
-                        <li class="list-inline-item"><span class="badge badge-ge">GE</span></li>
-                        <li class="list-inline-item"><span class="badge badge-er">RENOUVELABLE</span></li>
-                    </ul>
-                </div>
             </div>
         </div>
 
@@ -117,66 +67,13 @@
                 dat3 = Object.values(secs.ges);
                 dat4 = [secs.source.e2c,secs.source.ge,secs.source.er]
 
-                $(".badge-e2c").text("E2C - "+secs.source.e2c+"%");
-                $(".badge-ge").text("GE - "+secs.source.ge+"%");
-                $(".badge-er").text("Renouvelable - "+secs.source.er+"%");
+               // $(".badge-e2c").text("E2C - "+secs.source.e2c+"%");
+               // $(".badge-ge").text("GE - "+secs.source.ge+"%");
+              //  $(".badge-er").text("Renouvelable - "+secs.source.er+"%");
                // var l1 = Object.keys(secs.sec1);
                // var d1 = Object.values(secs.sec1);
 
-                new Chart(
-                    document.getElementById('elec'),
-                    {
-                    type: 'line',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        labels: lab1,
-                        datasets: [
-                        {
-                            label: 'Consommation electrique',
-                            data: dat1,
-                            borderColor: '#3d9970',
-                        }
-                        ]
-                    }
-                    }
-                );
-                new Chart(
-                    document.getElementById('eau'),
-                    {
-                    type: 'bar',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        labels: lab2,
-                        datasets: [
-                        {
-                            label: 'Consommation d\'eau',
-                            data: dat2,
-                            backgroundColor: '#3d9970',
-                        }
-                        ]
-                    }
-                    }
-                );
+
                 new Chart(
                     document.getElementById('ges'),
                     {
@@ -204,35 +101,7 @@
                     }
                     }
                 );
-                new Chart(
-                    document.getElementById('source'),
-                    {
-                    type: 'pie',
-                    options: {
-                        animation: false,
-                        plugins: {
-                        legend: {
-                            display: false
-                        },
-                        tooltip: {
-                            enabled: false
-                        }
-                        }
-                    },
-                    data: {
-                        //labels: lab3,
-                        datasets: [
-                        {
-                            label: 'Repartition',
-                            data: dat4,
-                            //borderColor: '#3d9970',
-                            backgroundColor: ['#3080d0','#c11b1b','#3d9970'],
-                        }
-                        ]
-                    }
-                    }
-                );
-
+               
               },
             error:function(err){
                 console.log(err);

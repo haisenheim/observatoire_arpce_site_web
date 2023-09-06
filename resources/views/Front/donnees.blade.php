@@ -40,67 +40,75 @@
           </div>
       <div class="container">
         <hr/>
-        <div class="section-title">
-            <h5 class="text-center">consommation d'électricité en Kwh</h5>
+        <div id="elec-section" class="hs">
+            <div class="section-title">
+                <h5 class="text-center">consommation d'électricité en Kwh</h5>
+            </div>
+
+            <div class="row">
+                <div style="display: flex" class="col-md-5 col-sm-12">
+                    <div style="align-self: center">
+                        <p>Moyenne de la consommation électrique des entreprises participantes.</p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div style="width: 500px;"><canvas id="elec"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div id="eau-section" class="hs">
+            <div class="section-title">
+                <h5 class="text-center">Consommation eau en m3</h5>
+            </div>
+            <div class="row">
+                <div style="display: flex" class="col-md-5 col-sm-12">
+                    <div style="align-self: center">
+                        <p>Moyenne de la consommation électrique des entreprises participantes </p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div style="width: 500px;"><canvas id="eau"></canvas></div>
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <div id="ges-section">
+            <div class="section-title">
+                <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
+            </div>
+            <div class="row">
+                <div style="display: flex" class="col-md-5 col-sm-12">
+                    <div style="align-self: center">
+                        <p>Calcul des émissions moyenne de Gaz à effet de serre en prenant en compte le mix énergétique du congo d’après les données de E2C </p>
+                    </div>
+                </div>
+                <div class="col-md-7 col-sm-12">
+                    <div style="width: 500px;"><canvas id="ges"></canvas></div>
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Moyenne de la consommation électrique des entreprises participantes.</p>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div style="width: 500px;"><canvas id="elec"></canvas></div>
-            </div>
-        </div>
         <hr/>
-        <div class="section-title">
-            <h5 class="text-center">Consommation eau en m3</h5>
-        </div>
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Moyenne de la consommation électrique des entreprises participantes </p>
+        <div id="source-section" class="hs">
+            <div class="section-title">
+                <h5 class="text-center">Repartition des sources d'energie</h5>
+            </div>
+            <div class="row">
+                <div style="display: flex" class="col-md-5 col-sm-12">
+                    <div style="align-self: center">
+                        <p>Origines moyennes des approvisionnements énergétiques des entreprises participantes</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div style="width: 500px;"><canvas id="eau"></canvas></div>
-            </div>
-        </div>
-        <hr/>
-        <div class="section-title">
-            <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
-        </div>
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Calcul des émissions moyenne de Gaz à effet de serre en prenant en compte le mix énergétique du congo d’après les données de E2C </p>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div style="width: 500px;"><canvas id="ges"></canvas></div>
-            </div>
-        </div>
-
-        <hr/>
-        <div class="section-title">
-            <h5 class="text-center">Repartition des sources d'energie</h5>
-        </div>
-        <div class="row">
-            <div style="display: flex" class="col-md-5 col-sm-12">
-                <div style="align-self: center">
-                    <p>Origines moyennes des approvisionnements énergétiques des entreprises participantes</p>
-                </div>
-            </div>
-            <div class="col-md-7 col-sm-12">
-                <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
-                <div style="font-size: smaller" class="text-center">
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><span class="badge badge-e2c">E2C</span></li>
-                        <li class="list-inline-item"><span class="badge badge-ge">GE</span></li>
-                        <li class="list-inline-item"><span class="badge badge-er">RENOUVELABLE</span></li>
-                    </ul>
+                <div class="col-md-7 col-sm-12">
+                    <div class="text-center" style="width: 170px; margin:5px auto"><canvas id="source"></canvas></div>
+                    <div style="font-size: smaller" class="text-center">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><span class="badge badge-e2c">E2C</span></li>
+                            <li class="list-inline-item"><span class="badge badge-ge">GE</span></li>
+                            <li class="list-inline-item"><span class="badge badge-er">RENOUVELABLE</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,11 +138,19 @@
 
     $('#entreprise_id').change(function(){
         var _id = $(this).val();
-        var name = $('#entreprise_id option:selected').text();
-        var title = `DONNEES ENVIRONNEMENTALES - ${name}`;
+
+
+        if(_id>0){
+            $('.hs').hide();
+            var name = $('#entreprise_id option:selected').text();
+            var title = `DONNEES ENVIRONNEMENTALES - ${name}`;
+        }else{
+            $('.hs').show();
+            var title = `DONNEES ENVIRONNEMENTALES GLOBALES`;
+        }
         $('#title').text(title);
         $.ajax({
-            url:'/data',
+            url:"{{ route('front.data') }}",
             type:'get',
             dataType:'json',
             data:{id:_id},
