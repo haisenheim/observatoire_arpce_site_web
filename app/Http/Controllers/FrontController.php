@@ -53,13 +53,13 @@ class FrontController extends Controller
         foreach($groups as $k=>$v){
             $qt_eau[$k] = $v->reduce(function($carry,$item){
                 return $carry + $item->qt_eau;
-            });
+            })/count($v);
         }
         $energie_elec = [];
         foreach($groups as $k=>$v){
             $energie_elec[$k] = $v->reduce(function($carry,$item){
                 return $carry + $item->energie_elec;
-            });
+            })/count($v);
         }
 
         $emissions = [];
