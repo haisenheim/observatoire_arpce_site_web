@@ -17,18 +17,18 @@ Route::namespace('App\Http\Controllers')
     ->middleware(['active'])
     ->name('front.')
     ->group(function(){
-        Route::get('/','FrontController@index');
-        Route::get('/data','FrontController@getData');
-        Route::get('/dashboard','FrontController@getDashboard');
-        Route::get('/blog','FrontController@getBlog');
-        Route::get('/about','FrontController@getAbout');
-        Route::get('/faq','FrontController@getFaq');
-        Route::get('/rapports','FrontController@getRapports');
-        Route::get('/textes','FrontController@getTextes');
-        Route::get('/bonnes-pratiques','FrontController@getPratiques');
-        Route::get('/article/{token}','FrontController@getArticle');
-        Route::get('/contact','FrontController@getContactForm');
-        Route::post('/sendcontact','FrontController@sendContact');
+        Route::get('/','FrontController@index')->name('accueil');
+        Route::get('/data','FrontController@getData')->name('data');
+        Route::get('/dashboard','FrontController@getDashboard')->name('dashboard');
+        Route::get('/blog','FrontController@getBlog')->name('blog');
+        Route::get('/about','FrontController@getAbout')->name('about');
+        Route::get('/faq','FrontController@getFaq')->name('faq');
+        Route::get('/rapports','FrontController@getRapports')->name('rapports');
+        Route::get('/textes','FrontController@getTextes')->name('textes');
+        Route::get('/bonnes-pratiques','FrontController@getPratiques')->name('pratiques');
+        Route::get('/article/{token}','FrontController@getArticle')->name('article');
+        Route::get('/contact','FrontController@getContactForm')->name('contact');
+        Route::post('/sendcontact','FrontController@sendContact')->name('send-contact');
     });
 
 Auth::routes();
@@ -42,11 +42,11 @@ Route::prefix('account')
     ->group(function(){
         Route::resource('rapports', 'RapportController');
         Route::resource('fiches', 'FicheController');
-        Route::get('fiche/save', 'FicheController@save');
-        Route::post('/fiche/datacenter','FicheController@addDatacenter');
+        Route::get('fiche/save', 'FicheController@save')->name('save-fiche');
+        Route::post('/fiche/datacenter','FicheController@addDatacenter')->name('fiche-datacenter');
         Route::resource('datacenters', 'DatacenterController');
-        Route::get('/profil','ProfilController@index');
-        Route::post('/profil','ProfilController@store');
+        Route::get('/profil','ProfilController@index')->name('profil');
+        Route::post('/profil','ProfilController@store')->name('save-profil');
     });
 
 

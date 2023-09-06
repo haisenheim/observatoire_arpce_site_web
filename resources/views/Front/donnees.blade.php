@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="/">Accueil</a></li>
+          <li><a href="{{ route('front.accueil') }}">Accueil</a></li>
           <li>Tableau de bord</li>
         </ol>
         <h2 id="title">DONNEES GLOBALES ENVIRONNEMENTALES</h2>
@@ -113,7 +113,7 @@
     var elec = document.getElementById("elec").getContext("2d");
     $(document).ready(function(){
         $.ajax({
-            url:'/data',
+            url:"{{ route('front.data') }}",
             type:'get',
             dataType:'json',
             success:function(secs){

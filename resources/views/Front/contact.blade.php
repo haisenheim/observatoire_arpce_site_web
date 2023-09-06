@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="/">ACCUEIL</a></li>
+          <li><a href="{{ route('front.accueil') }}">ACCUEIL</a></li>
           <li>Contact</li>
         </ol>
         <h2>Contact</h2>
@@ -54,7 +54,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="/sendcontact" method="POST" role="form" class="php-email-form">
+            <form action="{{ route('front.send-contact') }}" method="POST" role="form" class="php-email-form">
               @csrf
                 <div class="row">
                 <div class="col-md-6 form-group">

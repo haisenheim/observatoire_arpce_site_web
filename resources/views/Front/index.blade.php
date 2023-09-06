@@ -74,28 +74,28 @@
             <div class="col-lg-3">
               <div class="icon-box">
                 <i class="bi bi-search"></i>
-                <h3><a href="/dashboard">COLLECTE</a></h3>
+                <h3><a href="{{ route('front.dashboard') }}">COLLECTE</a></h3>
                 <p>Collecter et analyser les données sur l'impact environnemental du numérique.</p>
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
               <div class="icon-box">
                 <i class="bi bi-binoculars"></i>
-                <h3><a href="/dashboard">MONITORING</a></h3>
+                <h3><a href="{{ route('front.dashboard') }}">MONITORING</a></h3>
                 <p>Surveiller les progrès réalisés dans la réduction de l'empreinte carbone du secteur numérique.</p>
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
               <div class="icon-box">
                 <i class="bi bi-soundwave"></i>
-                <h3><a href="/bonnes-pratiques">SENSIBILISATION</a></h3>
+                <h3><a href="{{ route('front.pratiques') }}">SENSIBILISATION</a></h3>
                 <p>Sensibiliser les acteurs de l'écosystème numérique aux enjeux environnementaux.</p>
               </div>
             </div>
             <div class="col-lg-3 mt-4 mt-lg-0">
                 <div class="icon-box">
                   <i class="bi bi-graph-up"></i>
-                  <h3><a href="/rapports">DEVELOPPEMENT</a></h3>
+                  <h3><a href="{{ route('front.rapports') }}">DEVELOPPEMENT</a></h3>
                   <p>Développer des recommandations pour une transformation numérique plus durable.</p>
                 </div>
               </div>

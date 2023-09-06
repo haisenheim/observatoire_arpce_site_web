@@ -59,7 +59,7 @@
                 <div class="logo">
                     <!-- <h1><a href="/">Eterna</a></h1> -->
                      <!-- Uncomment below if you prefer to use an image logo -->
-                     <a href='/'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
+                     <a href='{{ route('front.accueil') }}'><img src="{{ asset('img/logo.png') }}" alt="" class="img-fluid"></a>
                 </div>
             </div>
             <div style="align-self: center; padding:5px 10px;" >
@@ -84,11 +84,11 @@
                         </li>
                         <li class="dropdown {{ $active==4?'active':'' }}"><a href="#"><span>PUBLICATIONS</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
-                              <li><a href="/blog">ACTUALITE</a></li>
+                              <li><a href="{{ route('front.blog') }}">ACTUALITE</a></li>
 
-                              <li><a href="/rapports">RAPPORTS</a></li>
-                              <li><a href="/textes">TEXTES REGLEMENTAIRES</a></li>
-                              <li><a href="/bonnes-pratiques">BONNES PRATIQUES</a></li>
+                              <li><a href="{{ route('front.rapports') }}">RAPPORTS</a></li>
+                              <li><a href="{{ route('front.textes') }}">TEXTES REGLEMENTAIRES</a></li>
+                              <li><a href="{{ route('front.pratiques') }}">BONNES PRATIQUES</a></li>
                             </ul>
                         </li>
                         <li><a class="{{ $active==5?'active':'' }}" href="/faq">FAQ</a></li>
@@ -102,16 +102,16 @@
                               </div>
                           </a>
                           <ul>
-                              <li><a href="/account/profil">Profil</a></li>
-                              <li><a href="/account/rapports">Rapports</a></li>
-                              <li><a href="/account/fiches">Fiches</a></li>
+                              <li><a href="{{ route('account.profil') }}">Profil</a></li>
+                              <li><a href="{{ route('account.rapports.index') }}">Rapports</a></li>
+                              <li><a href="{{ route('account.rapports.fiches') }}">Fiches</a></li>
 
-                              <li><a href="/logout">Se deconnecter</a></li>
+                              <li><a href="{{ route('logout') }}">Se deconnecter</a></li>
                           </ul>
                       </li>
 
                         @else
-                          <li><a class="" style="" href="/login">Connexion</a></li>
+                          <li><a class="" style="" href="{{ route('login') }}">Connexion</a></li>
                         @endif
                       </ul>
                       <i class="bi bi-list mobile-nav-toggle"></i>

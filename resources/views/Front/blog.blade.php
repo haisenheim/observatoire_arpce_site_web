@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Accueil</a></li>
+          <li><a href="{{ route('front.accueil') }}">Accueil</a></li>
           <li>Publications</li>
         </ol>
         <h2>Publications</h2>
@@ -30,7 +30,7 @@
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="/article/{{ $article->token }}">{{ $article->name }}</a>
+                  <a href="{{ route('front.article',$article->token) }}">{{ $article->name }}</a>
                 </h2>
 
                 <div class="entry-meta">
@@ -46,7 +46,7 @@
                     {{ $article->body }}
                   </p>
                   <div class="read-more">
-                    <a href="/article/{{ $article->token }}">Lire</a>
+                    <a href="{{ route('front.article',$article->token) }}">Lire</a>
                   </div>
                 </div>
 

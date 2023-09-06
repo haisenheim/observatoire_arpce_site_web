@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="/">Accueil</a></li>
+          <li><a href="{{ route('front.accueil') }}">Accueil</a></li>
           <li>Faq</li>
         </ol>
         <h2>FOIRE AUX QUESTIONS</h2>
@@ -19,7 +19,7 @@
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
         <div class="container">
-           
+
             <div class="accordion" id="accordionExample">
                 <?php $i=0; ?>
                 @foreach ($faqs as $faq )
@@ -37,8 +37,8 @@
                   </div>
                   <?php $i++; ?>
                 @endforeach
-                
-              </div>  
+
+              </div>
 
 
         </div>

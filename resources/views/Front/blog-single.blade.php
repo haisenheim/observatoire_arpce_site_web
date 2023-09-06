@@ -8,8 +8,8 @@
       <div class="container">
 
         <ol>
-          <li><a href="index.html">Accueil</a></li>
-          <li><a href="blog.html">Publications</a></li>
+          <li><a href="{{ route('front.accueil') }}">Accueil</a></li>
+          <li><a href="{{ route('front.blog') }}">Publications</a></li>
         </ol>
         <h2>{{ $article->name }}</h2>
 

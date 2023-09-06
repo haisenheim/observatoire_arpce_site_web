@@ -10,11 +10,11 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>MENU</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/">ACCUEIL</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/dashboard">Donnees environnementales</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/faq">Faq</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/blog">Publications</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/contact">Contact</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('front.accueil') }}">ACCUEIL</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('front.dashboard') }}">Donnees environnementales</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('front.faq') }}">Faq</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('front.blog') }}">Publications</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('front.contact') }}t">Contact</a></li>
             </ul>
           </div>
 
