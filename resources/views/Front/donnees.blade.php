@@ -64,7 +64,7 @@
             <div class="row">
                 <div style="display: flex" class="col-md-5 col-sm-12">
                     <div style="align-self: center">
-                        <p>Moyenne de la consommation électrique des entreprises participantes </p>
+                        <p>Moyenne de la consommation d'eau des entreprises participantes </p>
                     </div>
                 </div>
                 <div class="col-md-7 col-sm-12">
@@ -75,7 +75,7 @@
         <hr/>
         <div id="ges-section">
             <div class="section-title">
-                <h5 class="text-center">Emission de Gaz à effet de serre en KtCO2e</h5>
+                <h5 class="text-center">Emission de Gaz à effet de serre en tCO2e </h5>
             </div>
             <div class="row">
                 <div style="display: flex" class="col-md-5 col-sm-12">
