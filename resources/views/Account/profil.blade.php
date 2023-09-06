@@ -8,7 +8,7 @@
             <div class="container">
 
               <ol>
-                <li><a href="/">ACCUEIL</a></li>
+                <li><a href="{{ route('front.accueil') }}">ACCUEIL</a></li>
                 <li>Profil</li>
               </ol>
               <h2>{{ $profil->entreprise->name }}</h2>
@@ -17,7 +17,7 @@
         </section><!-- End Breadcrumbs -->
         <div class="container">
             <div class="m-5">
-                <form method="POST" enctype="multipart/form-data" action="/account/profil">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('front.save-profil') }}">
                     <div class="">
                         @csrf
                       <div class="row">

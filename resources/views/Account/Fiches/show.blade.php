@@ -282,7 +282,7 @@
             {
                 var value = e.target.textContent;
                 $.ajax({
-                    url:'/account/fiche/save',
+                    url:"{{ route('account.save-fiche') }}",
                     type:'get',
                     dataType:'json',
                     data:{id:id,value:value,field:field},

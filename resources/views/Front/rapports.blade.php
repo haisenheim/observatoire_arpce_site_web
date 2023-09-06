@@ -8,7 +8,7 @@
       <div class="container">
 
         <ol>
-          <li><a href="{{ route('front.accueil') }}">Accueil</a></li>
+          <li><a href="{{ route('front.accueil') }} ">Accueil</a></li>
           <li>Rapports</li>
         </ol>
         <h2>RAPPORTS</h2>

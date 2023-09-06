@@ -10,7 +10,7 @@
         <div class="container">
 
           <ol>
-            <li><a href="/">ACCUEIL</a></li>
+            <li><a href="{{ route('front.accueil') }}">ACCUEIL</a></li>
             <li>DATACENTERS</li>
           </ol>
           <h2>CENTRES DE DONNEES</h2>
@@ -65,7 +65,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form method="POST" enctype="multipart/form-data" action="/account/datacenters">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('account.datacenters.store') }}">
         <div class="modal-body">
             @csrf
           <div class="row">

@@ -10,7 +10,7 @@
             <div class="container">
 
               <ol>
-                <li><a href="/">ACCUEIL</a></li>
+                <li><a href="{{ route('front.accueil') }}">ACCUEIL</a></li>
                 <li>Rapports</li>
               </ol>
               <h2>Rapports</h2>
@@ -61,7 +61,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form method="POST" enctype="multipart/form-data" action="/account/rapports">
+        <form method="POST" enctype="multipart/form-data" action="{{ route('account.rapports.store') }}">
         <div class="modal-body">
             @csrf
           <div class="row">

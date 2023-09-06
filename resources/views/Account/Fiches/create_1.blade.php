@@ -5,7 +5,7 @@
     <div id="main" class="scrolled-offset">
         <div class="container">
             <div class="m-5">
-                <form method="POST" action="/account/fiches">
+                <form method="POST" action="{{ route('account.fiches.store') }}">
                     <div class="modal-body">
                         @csrf
                       <div style="max-width: 600px; margin:10px auto;" class="">

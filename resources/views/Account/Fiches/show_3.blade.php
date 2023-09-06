@@ -89,7 +89,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form method="POST" action="/account/fiche/datacenter">
+        <form method="POST" action="{{ route('account.save-fiche') }}">
             <div class="modal-body">
                 @csrf
                 <input type="hidden" name="token" value="{{ $fiche->token }}">

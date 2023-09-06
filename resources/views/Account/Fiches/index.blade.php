@@ -8,13 +8,13 @@
 
         <div style="min-height:300px; overflow: scroll;" class="mt-4 p-2">
                 <div>
-                    <div class="pull-right"><a href="/account/fiches/create" class="btn btn-xs btn-success"><i class="fa fa-edit" title="Ajouter une fiche"></i>Remplir une fiche</a></div>
+                    <div class="pull-right"><a href="{{ route('account.fiches.create') }}" class="btn btn-xs btn-success"><i class="fa fa-edit" title="Ajouter une fiche"></i>Remplir une fiche</a></div>
                 </div>
                 <div class="container">
                     <div class="row">
                         @foreach ($fiches as $p)
                             <div class="col-md-3 col-sm-12">
-                                <a href="/account/fiches/{{ $p->token }}">
+                                <a href="{{ route('account.fiches.show',$p->token) }}">
                                     <div class="card">
                                         <div class="card-body">
                                             <p>{{ $p->annee }}</p>
