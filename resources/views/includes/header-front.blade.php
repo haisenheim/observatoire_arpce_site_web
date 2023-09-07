@@ -77,10 +77,10 @@
 
                     <nav id="navbar" class="navbar">
                       <ul>
-                        <li><a class="{{ $active==1?'active':'' }}" href="/">ACCUEIL</a></li>
-                        <li><a class="{{ $active==2?'active':'' }}" href="/about">A PROPOS</a></li>
+                        <li><a class="{{ $active==1?'active':'' }}" href="{{ route('front.accueil') }}">ACCUEIL</a></li>
+                        <li><a class="{{ $active==2?'active':'' }}" href="{{ route('front.about') }}">A PROPOS</a></li>
                         <li class="">
-                            <a class="{{ $active==3?'active':'' }}" href="/dashboard">TABLEAU DE BORD</a>
+                            <a class="{{ $active==3?'active':'' }}" href="{{ route('front.dashboard') }}">TABLEAU DE BORD</a>
                         </li>
                         <li class="dropdown {{ $active==4?'active':'' }}"><a href="#"><span>PUBLICATIONS</span> <i class="bi bi-chevron-down"></i></a>
                             <ul>
@@ -91,8 +91,8 @@
                               <li><a href="{{ route('front.pratiques') }}">BONNES PRATIQUES</a></li>
                             </ul>
                         </li>
-                        <li><a class="{{ $active==5?'active':'' }}" href="/faq">FAQ</a></li>
-                        <li><a class="{{ $active==6?'active':'' }}" href="/contact">CONTACT</a></li>
+                        <li><a class="{{ $active==5?'active':'' }}" href="{{ route('front.faq') }}">FAQ</a></li>
+                        <li><a class="{{ $active==6?'active':'' }}" href="{{ route('front.contact') }}">CONTACT</a></li>
                         @if($auth)
                         <?php $entx = \App\Models\Entreprise::find(auth()->user()->entreprise_id); ?>
                       <li class="dropdown">
