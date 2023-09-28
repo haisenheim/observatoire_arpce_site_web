@@ -104,7 +104,7 @@
                           <ul>
                               <li><a href="{{ route('account.profil') }}">Profil</a></li>
                               <li><a href="{{ route('account.rapports.index') }}">Rapports</a></li>
-                              <li><a href="{{ route('account.rapports.fiches') }}">Fiches</a></li>
+                              <li><a href="{{ route('account.rapports.index') }}">Fiches</a></li>
 
                               <li><a href="{{ route('logout') }}">Se deconnecter</a></li>
                           </ul>

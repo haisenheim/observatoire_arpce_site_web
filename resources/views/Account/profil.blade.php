@@ -17,7 +17,7 @@
         </section><!-- End Breadcrumbs -->
         <div class="container">
             <div class="m-5">
-                <form method="POST" enctype="multipart/form-data" action="{{ route('front.save-profil') }}">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('account.profil.store') }}">
                     <div class="">
                         @csrf
                       <div class="row">

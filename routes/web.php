@@ -46,7 +46,7 @@ Route::prefix('account')
         Route::post('/fiche/datacenter','FicheController@addDatacenter')->name('fiche-datacenter');
         Route::resource('datacenters', 'DatacenterController');
         Route::get('/profil','ProfilController@index')->name('profil');
-        Route::post('/profil','ProfilController@store')->name('save-profil');
+        Route::post('/profil','ProfilController@store')->name('profil.store');
     });
 
 
