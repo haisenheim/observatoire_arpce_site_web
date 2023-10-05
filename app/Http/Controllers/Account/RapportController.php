@@ -50,20 +50,22 @@ class RapportController extends ExtendedController
     {
         $rapport = new Rapport();
         $fichier = $request->fichier_uri;
-        $rapport->name = $request->name;
-        $rapport->fichier_uri = $this->entityDocumentCreate($fichier,'rapports',time());
-        $rapport->entreprise_id = auth()->user()->entreprise_id;
-        $rapport->user_id = auth()->user()->id;
-        $rapport->annee = $request->annee;
-        $rapport->save();
-        Mail::to('clementessomba@alliages-tech.com')
-        ->send(new SendReportMail($rapport));
-        Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
-        ->send(new SendReportMail($rapport));
-        Mail::to('danielle.ouanounga@arpce.cg')
-        ->send(new SendReportMail($rapport));
-        Mail::to('pascal.mouandza@arpce.cg')
-        ->send(new SendReportMail($rapport));
+        if($fichier){
+            $rapport->name = $request->name;
+            $rapport->fichier_uri = $this->entityDocumentCreate($fichier,'rapports',time());
+            $rapport->entreprise_id = auth()->user()->entreprise_id;
+            $rapport->user_id = auth()->user()->id;
+            $rapport->annee = $request->annee;
+            $rapport->save();
+            Mail::to('clementessomba@alliages-tech.com')
+            ->send(new SendReportMail($rapport));
+            Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
+            ->send(new SendReportMail($rapport));
+            Mail::to('danielle.ouanounga@arpce.cg')
+            ->send(new SendReportMail($rapport));
+            Mail::to('pascal.mouandza@arpce.cg')
+            ->send(new SendReportMail($rapport));
+        }
         return back();
     }
 
