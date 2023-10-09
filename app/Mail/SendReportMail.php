@@ -61,10 +61,10 @@ class SendReportMail extends Mailable
      */
     public function attachments()
     {
-        return [
+       /*  return [
             Attachment::fromPath($this->report->fichier)
             ->as($this->report->name .'.pdf')
             ->withMime('application/pdf'),
-        ];
+        ]; */
     }
 }
