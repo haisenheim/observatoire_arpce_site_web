@@ -35,7 +35,7 @@ class ExtendedController extends Controller
 	protected function entityDocumentCreate($file,$entity,$name_without_extension){
 
 		$ext = $file->getClientOriginalExtension();
-		$arr_ext = $this->authExtensions();
+		$arr_ext = array('pdf','PDF','Pdf');
 
 		if (!file_exists(public_path('files'))) {
 			mkdir(public_path('files'));
