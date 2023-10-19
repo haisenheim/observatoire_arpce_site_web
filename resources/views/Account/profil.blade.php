@@ -3,6 +3,9 @@
 
 @section('content')
     <div id="main" class="scrolled-offset">
+        <div id="div-flash" class="container">
+            @include('includes.flash-message')
+        </div>
                 <!-- ======= Breadcrumbs ======= -->
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
@@ -35,10 +38,10 @@
                                     <label for="">Email</label>
                                     <input type="email" name="email" value="{{ $profil->entreprise->email }}" required placeholder="Email" class="form-control">
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <label for="">LOGO </label>
                                     <input type="file" name="logo" placeholder="image" class="form-control">
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="col-md-5 col-sm-12">
                                 <fieldset>

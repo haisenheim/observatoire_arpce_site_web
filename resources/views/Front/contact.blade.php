@@ -2,7 +2,9 @@
 
 @section('content')
 <main id="main">
-
+    <div id="div-flash" class="container">
+        @include('includes.flash-message')
+    </div>
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">

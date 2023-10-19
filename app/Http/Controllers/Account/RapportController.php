@@ -21,7 +21,7 @@ class RapportController extends ExtendedController
     public function index()
     {
         //
-        $rapports = Rapport::where('entreprise_id',auth()->user()->entreprise_id)->get();
+        $rapports = Rapport::orderBy('created_at','DESC')->where('entreprise_id',auth()->user()->entreprise_id)->get();
         return view('/Account/Rapports/index')->with(compact('rapports'));
     }
 
@@ -52,19 +52,26 @@ class RapportController extends ExtendedController
         $fichier = $request->fichier_uri;
         if($fichier){
             $rapport->name = $request->name;
-            $rapport->fichier_uri = $this->entityDocumentCreate($fichier,'rapports',time());
+            $path = $this->entityDocumentCreate($fichier,'rapports',time());
+            if(!$path){
+                request()->session()->flash('danger',' Impossible d\'enregistrer le fichier, le format n\'est pas correct !!!');
+                return back();
+            }
+            $rapport->fichier_uri = $path;
             $rapport->entreprise_id = auth()->user()->entreprise_id;
             $rapport->user_id = auth()->user()->id;
             $rapport->annee = $request->annee;
             $rapport->save();
             Mail::to('clementessomba@alliages-tech.com')
             ->send(new SendReportMail($rapport));
-            Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
+            /* Mail::to('natsy.bouitiviaudo@sbv-consulting.cg')
             ->send(new SendReportMail($rapport));
             Mail::to('danielle.ouanounga@arpce.cg')
             ->send(new SendReportMail($rapport));
             Mail::to('pascal.mouandza@arpce.cg')
-            ->send(new SendReportMail($rapport));
+            ->send(new SendReportMail($rapport)); */
+        }else{
+            request()->session()->flash('danger',' Impossible d\'enregistrer le fichier est incorrect !!!');
         }
         return back();
     }

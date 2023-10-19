@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\ExtendedController;
-use App\Models\Agent;
 use App\Models\Entreprise;
-use App\Models\Rapport;
-use App\Models\Region;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -52,15 +49,22 @@ class ProfilController extends ExtendedController
         $data['name'] = $request->user_name;
         $data['phone'] = $request->user_phone;
         $data['email'] = $request->user_email;
+
         if($request->password){
             $data['password'] = bcrypt($request->password);
         }
-        
+
         User::updateOrCreate(['id'=>auth()->user()->id],$data);
         $ent['name'] = $request->name;
         $ent['phone'] = $request->phone;
         $ent['email'] = $request->email;
+        $image = request()->logo;
+        if($image){
+            $path = $this->entityImgCreate($image,'entreprise',time());
+            $ent['image_uri'] = $path;
+        }
         Entreprise::updateOrCreate(['id'=>auth()->user()->entreprise_id],$ent);
+        request()->session()->flash('info','Profil mis a jour avec succes !!!');
         return back();
     }
 

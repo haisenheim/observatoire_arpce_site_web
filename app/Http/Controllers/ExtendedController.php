@@ -55,9 +55,9 @@ class ExtendedController extends Controller
 			return $imageUri;
 		}else{
 			//dd('ok');
-			request()->session()->flash('danger',' Impossible d\'enregistrer le fichier, le format n\'est pas correct !!!');
+            return null;
+			
 		}
-
 
 		return null;
 	}

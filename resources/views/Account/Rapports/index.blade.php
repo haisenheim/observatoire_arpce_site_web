@@ -4,7 +4,10 @@
 @section('content')
 <script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
 <script src="{{asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-<main id="main" class="scrolled-offset">
+<main id="main" class="scrolled-offse">
+    <div id="div-flash" class="container">
+        @include('includes.flash-message')
+    </div>
         <!-- ======= Breadcrumbs ======= -->
         <section id="breadcrumbs" class="breadcrumbs">
             <div class="container">
