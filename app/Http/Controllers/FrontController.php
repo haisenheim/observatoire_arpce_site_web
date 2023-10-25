@@ -138,7 +138,7 @@ class FrontController extends Controller
             ->send(new SendContactMail($data));
             Mail::to('pascal.mouandza@arpce.cg')
             ->send(new SendContactMail($data)); */
-            request()->session()->flash('light','Merci d’avoir rempli le formulaire. Vous serez contacté dans les meilleurs délais. <br> Vous pouvez nous joindre au +242 05 510 72 72');
+            request()->session()->flash('light','Merci d’avoir rempli le formulaire. Vous serez contacté dans les meilleurs délais. Vous pouvez nous joindre au +242 05 510 72 72');
         return back();
     }
 }
