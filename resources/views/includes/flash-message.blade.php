@@ -51,15 +51,17 @@
 
 
 @if ($message = session('info'))
+    <div class="alert alert-info alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
+@endif
 
-<div class="alert alert-info alert-block">
-
-	<button type="button" class="close" data-dismiss="alert">×</button>
-
-	<strong>{{ $message }}</strong>
-
-</div>
-
+@if ($message = session('light'))
+    <div class="alert alert-light alert-block">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>{{ $message }}</strong>
+    </div>
 @endif
 
 
@@ -74,3 +76,9 @@
 </div>
 
 @endif
+<script src="{{ asset('plugins/jquery/jquery.js') }}"></script>
+<script>
+    $('.close').click(function(){
+        $(this).parent().remove();
+    });
+</script>
