@@ -35,8 +35,8 @@
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{ $article->user->name }}</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">{{ date_format($article->created_at,'d/m/Y') }}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="#">{{ $article->user?$article->user->name:'admin' }}</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="#"><time datetime="2020-01-01">{{ date_format($article->created_at,'d/m/Y') }}</time></a></li>
 
                   </ul>
                 </div>
